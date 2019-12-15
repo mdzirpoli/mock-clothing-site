@@ -123,6 +123,72 @@ class WomenPageTests(unittest.TestCase):
         women = WomenPage(driver)
         women.select_compositions_viscose_checkbox()
 
+    @unittest.skip("pass")
+    def test_select_styles_casual_checkbox(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.select_styles_casual_checkbox()
+
+    @unittest.skip("pass")
+    def test_select_styles_dressy_checkbox(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.select_styles_dressy_checkbox()
+
+    @unittest.skip("pass")
+    def test_select_styles_girly_checkbox(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.select_styles_girly_checkbox()
+
+    @unittest.skip("pass")
+    def test_select_properties_colorful_dress_checkbox(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.select_properties_colorful_dress_checkbox()
+
+    @unittest.skip("pass")
+    def test_select_properties_maxi_dress_checkbox(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.select_properties_maxi_dress_checkbox()
+
+    @unittest.skip("pass")
+    def test_select_properties_midi_dress_checkbox(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.select_properties_midi_dress_checkbox()
+
+    @unittest.skip("pass")
+    def test_select_properties_short_dress_checkbox(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.select_properties_short_dress_checkbox()
+
+    @unittest.skip("pass")
+    def test_select_properties_short_sleeve_checkbox(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.select_properties_short_sleeve_checkbox()
+
+    @unittest.skip("pass")
+    def test_select_availability_in_stock_checkbox(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.select_availability_in_stock_checkbox()
+
+    @unittest.skip("pass")
+    def test_select_manufacturer_fashion_manufacturer_checkbox(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.select_manufacturer_fashion_manufacturer_checkbox()
+
+    @unittest.skip("pass")
+    def test_select_condition_new_checkbox(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.select_condition_new_checkbox()
+
 
 if __name__ == '__main__':
     unittest.main()

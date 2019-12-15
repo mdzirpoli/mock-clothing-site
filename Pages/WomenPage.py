@@ -42,6 +42,27 @@ class WomenPage(BasePage):
     COMPOSITIONS_POLYESTER_CHECKBOX = (By.ID, "layered_id_feature_1")
     COMPOSITIONS_VISCOSE_CHECKBOX = (By.ID, "layered_id_feature_3")
 
+    # Styles locators
+    STYLES_CASUAL_CHECKBOX = (By.ID, "layered_id_feature_11")
+    STYLES_DRESSY_CHECKBOX = (By.ID, "layered_id_feature_16")
+    STYLES_GIRLY_CHECKBOX = (By.ID, "layered_id_feature_13")
+
+    # Properties locators
+    PROPERTIES_COLORFUL_DRESS_CHECKBOX = (By.ID, "layered_id_feature_18")
+    PROPERTIES_MAXI_DRESS_CHECKBOX = (By.ID, "layered_id_feature_21")
+    PROPERTIES_MIDI_DRESS_CHECKBOX = (By.ID, "layered_id_feature_20")
+    PROPERTIES_SHORT_DRESS_CHECKBOX = (By.ID, "layered_id_feature_19")
+    PROPERTIES_SHORT_SLEEVE_CHECKBOX = (By.ID, "layered_id_feature_17")
+
+    # Availability locators
+    AVAILABILITY_IN_STOCK_CHECKBOX = (By.ID, "layered_quantity_1")
+
+    # Manufacturer locators
+    MANUFACTURER_FASHION_MANUFACTURER_CHECKBOX = (By.ID, "layered_manufacturer_1")
+
+    # Condition locators
+    CONDITION_NEW_CHECKBOX = (By.ID, "layered_condition_new")
+
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
@@ -96,3 +117,37 @@ class WomenPage(BasePage):
 
     def select_compositions_viscose_checkbox(self):
         self.driver.find_element(*WomenPage.COMPOSITIONS_VISCOSE_CHECKBOX).click()
+
+    def select_styles_casual_checkbox(self):
+        self.driver.find_element(*WomenPage.STYLES_CASUAL_CHECKBOX).click()
+
+    def select_styles_dressy_checkbox(self):
+        self.driver.find_element(*WomenPage.STYLES_DRESSY_CHECKBOX).click()
+
+    def select_styles_girly_checkbox(self):
+        self.driver.find_element(*WomenPage.STYLES_GIRLY_CHECKBOX).click()
+
+    def select_properties_colorful_dress_checkbox(self):
+        self.driver.find_element(*WomenPage.PROPERTIES_COLORFUL_DRESS_CHECKBOX).click()
+
+    def select_properties_maxi_dress_checkbox(self):
+        self.driver.find_element(*WomenPage.PROPERTIES_MAXI_DRESS_CHECKBOX).click()
+
+    def select_properties_midi_dress_checkbox(self):
+        self.driver.find_element(*WomenPage.PROPERTIES_MIDI_DRESS_CHECKBOX).click()
+
+    def select_properties_short_dress_checkbox(self):
+        self.driver.find_element(*WomenPage.PROPERTIES_SHORT_DRESS_CHECKBOX).click()
+
+    def select_properties_short_sleeve_checkbox(self):
+        self.driver.find_element(*WomenPage.PROPERTIES_SHORT_SLEEVE_CHECKBOX).click()
+
+    def select_availability_in_stock_checkbox(self):
+        self.driver.find_element(*WomenPage.AVAILABILITY_IN_STOCK_CHECKBOX).click()
+
+    def select_manufacturer_fashion_manufacturer_checkbox(self):
+        self.driver.find_element(*WomenPage.MANUFACTURER_FASHION_MANUFACTURER_CHECKBOX).click()
+
+    def select_condition_new_checkbox(self):
+        self.driver.find_element(*WomenPage.CONDITION_NEW_CHECKBOX).click()
+
