@@ -189,6 +189,66 @@ class WomenPageTests(unittest.TestCase):
         women = WomenPage(driver)
         women.select_condition_new_checkbox()
 
+    @unittest.skip("pass")
+    def test_click_information_legal_notice_link(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.click_information_legal_notice_link()
+
+    @unittest.skip("pass")
+    def test_click_information_terms_and_conditions_of_use_link(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.click_information_terms_and_conditions_of_use_link()
+
+    @unittest.skip("pass")
+    def test_click_information_about_us_link(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.click_information_about_us_link()
+
+    @unittest.skip("pass")
+    def test_click_information_secure_payment_link(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.click_information_secure_payment_link()
+
+    @unittest.skip('pass')
+    def test_click_information_our_stores_link(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.click_information_our_stores_link()
+
+    @unittest.skip("pass")
+    def test_select_subcategories_tops_thumbnail(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.select_subcategories_tops_thumbnail()
+
+    @unittest.skip("pass")
+    def test_select_subcategories_dresses_thumbnail(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.select_subcategories_dresses_thumbnail()
+
+    @unittest.skip("pass")
+    def test_select_sort_by_dropdown(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.select_sort_by_dropdown("In stock")
+
+    @unittest.skip("pass")
+    def test_click_view_grid_button(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.click_view_grid_button()
+
+    @unittest.skip("pass")
+    def test_click_list_grid_button(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.click_list_grid_button()
+
 
 if __name__ == '__main__':
     unittest.main()

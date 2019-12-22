@@ -8,6 +8,7 @@ This module contains methods for the Women page
 
 from Pages.BasePageObject import BasePage
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
 
 
 class WomenPage(BasePage):
@@ -62,6 +63,21 @@ class WomenPage(BasePage):
 
     # Condition locators
     CONDITION_NEW_CHECKBOX = (By.ID, "layered_condition_new")
+
+    # Information locators
+    INFORMATION_DELIVERY_LINK = (By.XPATH, "//*[@id='informations_block_left_1']/div/ul/li[1]/a")
+    INFORMATION_LEGAL_NOTICE_LINK = (By.XPATH, "//*[@id='informations_block_left_1']/div/ul/li[2]/a")
+    INFORMATION_TERMS_AND_CONDITION_OF_USE_LINK = (By.XPATH, "//*[@id='informations_block_left_1']/div/ul/li[3]/a")
+    INFORMATION_ABOUT_US_LINK = (By.XPATH, "//*[@id='informations_block_left_1']/div/ul/li[4]/a")
+    INFORMATION_SECURE_PAYMENT_LINK = (By.XPATH, "//*[@id='informations_block_left_1']/div/ul/li[5]/a")
+    INFORMATION_OUR_STORES_LINK = (By.XPATH, "//*[@id='informations_block_left_1']/div/ul/li[6]/a")
+
+    # Products locators
+    SUBCATEGORIES_TOPS_THUMBNAIL = (By.XPATH, "/html/body/div/div[2]/div/div[3]/div[2]/div[2]/ul/li[1]/div[1]/a/img")
+    SUBCATEGORIES_DRESSES_THUMBNAIL = (By.XPATH, "//*[@id='subcategories']/ul/li[2]/div[1]/a/img")
+    SORT_BY_DROPDOWN = (By.ID, "selectProductSort")
+    VIEW_GRID_BUTTON = (By.XPATH, "//*[@id='grid']/a/i")
+    VIEW_LIST_BUTTON = (By.XPATH, "//*[@id='list']/a/i")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -150,4 +166,39 @@ class WomenPage(BasePage):
 
     def select_condition_new_checkbox(self):
         self.driver.find_element(*WomenPage.CONDITION_NEW_CHECKBOX).click()
+
+    def click_information_delivery_link(self):
+        self.driver.find_element(*WomenPage.INFORMATION_DELIVERY_LINK).click()
+
+    def click_information_legal_notice_link(self):
+        self.driver.find_element(*WomenPage.INFORMATION_LEGAL_NOTICE_LINK).click()
+
+    def click_information_terms_and_conditions_of_use_link(self):
+        self.driver.find_element(*WomenPage.INFORMATION_TERMS_AND_CONDITION_OF_USE_LINK).click()
+
+    def click_information_about_us_link(self):
+        self.driver.find_element(*WomenPage.INFORMATION_ABOUT_US_LINK).click()
+
+    def click_information_secure_payment_link(self):
+        self.driver.find_element(*WomenPage.INFORMATION_SECURE_PAYMENT_LINK).click()
+
+    def click_information_our_stores_link(self):
+        self.driver.find_element(*WomenPage.INFORMATION_OUR_STORES_LINK).click()
+
+    def select_subcategories_tops_thumbnail(self):
+        self.driver.find_element(*WomenPage.SUBCATEGORIES_TOPS_THUMBNAIL).click()
+
+    def select_subcategories_dresses_thumbnail(self):
+        self.driver.find_element(*WomenPage.SUBCATEGORIES_DRESSES_THUMBNAIL).click()
+
+    def select_sort_by_dropdown(self, value):
+        dropdown = Select(self.driver.find_element(*WomenPage.SORT_BY_DROPDOWN))
+        dropdown.select_by_visible_text(value)
+
+    def click_view_grid_button(self):
+        self.driver.find_element(*WomenPage.VIEW_GRID_BUTTON).click()
+
+    def click_list_grid_button(self):
+        self.driver.find_element(*WomenPage.VIEW_LIST_BUTTON).click()
+
 
