@@ -9,6 +9,7 @@ This module contains methods for the Women page
 from Pages.BasePageObject import BasePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver import ActionChains
 
 
 class WomenPage(BasePage):
@@ -18,6 +19,10 @@ class WomenPage(BasePage):
 
     # Women page navigation menu locator
     WOMEN_NAV_MENU_BUTTON = (By.XPATH, "//*[@id='block_top_menu']/ul/li[1]/a")
+
+    # Women Tops and Dresses locators
+    WOMEN_TOPS_LINK = (By.XPATH, "//*[@id='categories_block_left']/div/ul/li[1]/a")
+    WOMEN_DRESSES_LINK = (By.XPATH, "//*[@id='categories_block_left']/div/ul/li[2]/a")
 
     # Categories locators
     CATEGORIES_TOPS_CHECKBOX = (By.ID, "layered_category_4")
@@ -79,12 +84,24 @@ class WomenPage(BasePage):
     VIEW_GRID_BUTTON = (By.XPATH, "//*[@id='grid']/a/i")
     VIEW_LIST_BUTTON = (By.XPATH, "//*[@id='list']/a/i")
 
+    # Blouse locators
+    BLOUSE_THUMBNAIL = (By.XPATH, "//*[@title='Blouse']")
+    BLOUSE_QUICK_VIEW_BUTTON = (By.XPATH, "//span[text()='Quick view']")
+    BLOUSE_ADD_TO_CART_BUTTON = (By.XPATH, "//span[text()='Add to cart']")
+    BLOUSE_MORE_BUTTON = (By.XPATH, "//span[text()='More']")
+
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
 
     def click_women_nav_menu_button(self):
         self.driver.find_element(*WomenPage.WOMEN_NAV_MENU_BUTTON).click()
+
+    def click_women_tops_link(self):
+        self.driver.find_element(*WomenPage.WOMEN_TOPS_LINK).click()
+
+    def click_women_dresses_link(self):
+        self.driver.find_element(*WomenPage.WOMEN_DRESSES_LINK).click()
 
     def select_categories_tops_checkbox(self):
         self.driver.find_element(*WomenPage.CATEGORIES_TOPS_CHECKBOX).click()
@@ -200,5 +217,18 @@ class WomenPage(BasePage):
 
     def click_list_grid_button(self):
         self.driver.find_element(*WomenPage.VIEW_LIST_BUTTON).click()
+
+    def click_blouse_thumbnail(self):
+        self.driver.find_element(*WomenPage.BLOUSE_THUMBNAIL).click()
+
+    def click_blouse_quick_view_button(self):
+        button = self.driver.find_element(*WomenPage.BLOUSE_QUICK_VIEW_BUTTON)
+        thumbnail = self.driver.find_element(*WomenPage.BLOUSE_THUMBNAIL)
+        hover = ActionChains(self.driver).move_to_element(button).move_to_element(thumbnail)
+        hover.click().perform()
+
+
+
+
 
 

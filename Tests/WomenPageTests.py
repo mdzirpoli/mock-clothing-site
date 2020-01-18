@@ -28,6 +28,18 @@ class WomenPageTests(unittest.TestCase):
         self.driver.close()
 
     @unittest.skip("pass")
+    def test_click_women_tops_link(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.click_women_tops_link()
+
+    @unittest.skip("pass")
+    def test_click_women_dresses_link(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.click_women_dresses_link()
+
+    @unittest.skip("pass")
     def test_select_categories_tops_checkbox(self):
         driver = self.driver
         women = WomenPage(driver)
@@ -248,6 +260,18 @@ class WomenPageTests(unittest.TestCase):
         driver = self.driver
         women = WomenPage(driver)
         women.click_list_grid_button()
+
+    @unittest.skip("pass")
+    def test_click_blouse_thumbnail(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.click_blouse_thumbnail()
+
+    @unittest.skip("pass")
+    def test_click_blouse_quick_view_button(self):
+        driver = self.driver
+        women = WomenPage(driver)
+        women.click_blouse_quick_view_button()
 
 
 if __name__ == '__main__':
