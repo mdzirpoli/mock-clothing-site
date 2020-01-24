@@ -19,9 +19,8 @@ class WomenPageTests(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.get(url)
-        driver = self.driver
-        women = WomenPage(driver)
-        women.click_women_nav_menu_button()
+        self.women = WomenPage(self.driver)
+        self.women.click_women_nav_menu_button()
 
     def tearDown(self):
         time.sleep(2)
@@ -29,249 +28,167 @@ class WomenPageTests(unittest.TestCase):
 
     @unittest.skip("pass")
     def test_click_women_tops_link(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.click_women_tops_link()
+        self.women.click_women_tops_link()
 
     @unittest.skip("pass")
     def test_click_women_dresses_link(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.click_women_dresses_link()
+        self.women.click_women_dresses_link()
 
     @unittest.skip("pass")
     def test_select_categories_tops_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_categories_tops_checkbox()
+        self.women.select_categories_tops_checkbox()
 
     @unittest.skip("pass")
     def test_select_categories_dresses_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_categories_dresses_checkbox()
+        self.women.select_categories_dresses_checkbox()
 
     @unittest.skip("pass")
     def test_select_size_small_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_size_small_checkbox()
+        self.women.select_size_small_checkbox()
 
     @unittest.skip("pass")
     def test_select_size_medium_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_size_medium_checkbox()
+        self.women.select_size_medium_checkbox()
 
     @unittest.skip("pass")
     def test_select_size_large_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_size_large_checkbox()
+        self.women.select_size_large_checkbox()
 
     @unittest.skip("pass")
     def test_select_color_beige_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_color_beige_checkbox()
+        self.women.select_color_beige_checkbox()
 
     @unittest.skip("pass")
     def test_select_color_white_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_color_white_checkbox()
+        self.women.select_color_white_checkbox()
 
     @unittest.skip("pass")
     def test_select_color_black_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_color_black_checkbox()
+        self.women.select_color_black_checkbox()
 
     @unittest.skip("pass")
     def test_select_color_orange_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_color_orange_checkbox()
+        self.women.select_color_orange_checkbox()
 
     @unittest.skip("pass")
     def test_select_color_blue_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_color_blue_checkbox()
+        self.women.select_color_blue_checkbox()
 
     @unittest.skip("pass")
     def test_select_color_green_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_color_green_checkbox()
+        self.women.select_color_green_checkbox()
 
     @unittest.skip("pass")
     def test_select_color_yellow_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_color_yellow_checkbox()
+        self.women.select_color_yellow_checkbox()
 
     @unittest.skip("pass")
     def test_select_color_pink_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_color_pink_checkbox()
+        self.women.select_color_pink_checkbox()
 
     @unittest.skip("pass")
     def test_select_compositions_cotton_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_compositions_cotton_checkbox()
+        self.women.select_compositions_cotton_checkbox()
 
     @unittest.skip("pass")
     def test_select_compositions_polyester_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_compositions_polyester_checkbox()
+        self.women.select_compositions_polyester_checkbox()
 
     @unittest.skip("pass")
     def test_select_compositions_viscose_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_compositions_viscose_checkbox()
+        self.women.select_compositions_viscose_checkbox()
 
     @unittest.skip("pass")
     def test_select_styles_casual_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_styles_casual_checkbox()
+        self.women.select_styles_casual_checkbox()
 
     @unittest.skip("pass")
     def test_select_styles_dressy_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_styles_dressy_checkbox()
+        self.women.select_styles_dressy_checkbox()
 
     @unittest.skip("pass")
     def test_select_styles_girly_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_styles_girly_checkbox()
+        self.women.select_styles_girly_checkbox()
 
     @unittest.skip("pass")
     def test_select_properties_colorful_dress_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_properties_colorful_dress_checkbox()
+        self.women.select_properties_colorful_dress_checkbox()
 
     @unittest.skip("pass")
     def test_select_properties_maxi_dress_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_properties_maxi_dress_checkbox()
+        self.women.select_properties_maxi_dress_checkbox()
 
     @unittest.skip("pass")
     def test_select_properties_midi_dress_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_properties_midi_dress_checkbox()
+        self.women.select_properties_midi_dress_checkbox()
 
     @unittest.skip("pass")
     def test_select_properties_short_dress_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_properties_short_dress_checkbox()
+        self.women.select_properties_short_dress_checkbox()
 
     @unittest.skip("pass")
     def test_select_properties_short_sleeve_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_properties_short_sleeve_checkbox()
+        self.women.select_properties_short_sleeve_checkbox()
 
     @unittest.skip("pass")
     def test_select_availability_in_stock_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_availability_in_stock_checkbox()
+        self.women.select_availability_in_stock_checkbox()
 
     @unittest.skip("pass")
     def test_select_manufacturer_fashion_manufacturer_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_manufacturer_fashion_manufacturer_checkbox()
+        self.women.select_manufacturer_fashion_manufacturer_checkbox()
 
     @unittest.skip("pass")
     def test_select_condition_new_checkbox(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_condition_new_checkbox()
+        self.women.select_condition_new_checkbox()
 
     @unittest.skip("pass")
     def test_click_information_legal_notice_link(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.click_information_legal_notice_link()
+        self.women.click_information_legal_notice_link()
 
     @unittest.skip("pass")
     def test_click_information_terms_and_conditions_of_use_link(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.click_information_terms_and_conditions_of_use_link()
+        self.women.click_information_terms_and_conditions_of_use_link()
 
     @unittest.skip("pass")
     def test_click_information_about_us_link(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.click_information_about_us_link()
+        self.women.click_information_about_us_link()
 
     @unittest.skip("pass")
     def test_click_information_secure_payment_link(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.click_information_secure_payment_link()
+        self.women.click_information_secure_payment_link()
 
     @unittest.skip('pass')
     def test_click_information_our_stores_link(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.click_information_our_stores_link()
+        self.women.click_information_our_stores_link()
 
     @unittest.skip("pass")
     def test_select_subcategories_tops_thumbnail(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_subcategories_tops_thumbnail()
+        self.women.select_subcategories_tops_thumbnail()
 
     @unittest.skip("pass")
     def test_select_subcategories_dresses_thumbnail(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_subcategories_dresses_thumbnail()
+        self.women.select_subcategories_dresses_thumbnail()
 
     @unittest.skip("pass")
     def test_select_sort_by_dropdown(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.select_sort_by_dropdown("In stock")
+        self.women.select_sort_by_dropdown("In stock")
 
     @unittest.skip("pass")
     def test_click_view_grid_button(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.click_view_grid_button()
+        self.women.click_view_grid_button()
 
     @unittest.skip("pass")
     def test_click_list_grid_button(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.click_list_grid_button()
+        self.women.click_list_grid_button()
 
     @unittest.skip("pass")
     def test_click_blouse_thumbnail(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.click_blouse_thumbnail()
+        self.women.click_blouse_thumbnail()
 
     @unittest.skip("pass")
     def test_click_blouse_quick_view_button(self):
-        driver = self.driver
-        women = WomenPage(driver)
-        women.click_blouse_quick_view_button()
+        self.women.click_blouse_quick_view_button()
 
 
 if __name__ == '__main__':

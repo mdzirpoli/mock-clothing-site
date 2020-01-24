@@ -6,13 +6,12 @@ Created on December 1, 2019
 This module contains methods for the Women page
 """
 
-from Pages.BasePageObject import BasePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver import ActionChains
 
 
-class WomenPage(BasePage):
+class WomenPage(object):
     """
     Page object for Women page
     """
@@ -91,139 +90,138 @@ class WomenPage(BasePage):
     BLOUSE_MORE_BUTTON = (By.XPATH, "//span[text()='More']")
 
     def __init__(self, driver):
-        super().__init__(driver)
         self.driver = driver
 
     def click_women_nav_menu_button(self):
-        self.driver.find_element(*WomenPage.WOMEN_NAV_MENU_BUTTON).click()
+        self.driver.find_element(*self.WOMEN_NAV_MENU_BUTTON).click()
 
     def click_women_tops_link(self):
-        self.driver.find_element(*WomenPage.WOMEN_TOPS_LINK).click()
+        self.driver.find_element(*self.WOMEN_TOPS_LINK).click()
 
     def click_women_dresses_link(self):
-        self.driver.find_element(*WomenPage.WOMEN_DRESSES_LINK).click()
+        self.driver.find_element(*self.WOMEN_DRESSES_LINK).click()
 
     def select_categories_tops_checkbox(self):
-        self.driver.find_element(*WomenPage.CATEGORIES_TOPS_CHECKBOX).click()
+        self.driver.find_element(*self.CATEGORIES_TOPS_CHECKBOX).click()
 
     def select_categories_dresses_checkbox(self):
-        self.driver.find_element(*WomenPage.CATEGORIES_DRESSES_CHECKBOX).click()
+        self.driver.find_element(*self.CATEGORIES_DRESSES_CHECKBOX).click()
 
     def select_size_small_checkbox(self):
-        self.driver.find_element(*WomenPage.SIZE_SMALL_CHECKBOX).click()
+        self.driver.find_element(*self.SIZE_SMALL_CHECKBOX).click()
 
     def select_size_medium_checkbox(self):
-        self.driver.find_element(*WomenPage.SIZE_MEDIUM_CHECKBOX).click()
+        self.driver.find_element(*self.SIZE_MEDIUM_CHECKBOX).click()
 
     def select_size_large_checkbox(self):
-        self.driver.find_element(*WomenPage.SIZE_LARGE_CHECKBOX).click()
+        self.driver.find_element(*self.SIZE_LARGE_CHECKBOX).click()
 
     def select_color_beige_checkbox(self):
-        self.driver.find_element(*WomenPage.COLOR_BEIGE_CHECKBOX).click()
+        self.driver.find_element(*self.COLOR_BEIGE_CHECKBOX).click()
 
     def select_color_white_checkbox(self):
-        self.driver.find_element(*WomenPage.COLOR_WHITE_CHECKBOX).click()
+        self.driver.find_element(*self.COLOR_WHITE_CHECKBOX).click()
 
     def select_color_black_checkbox(self):
-        self.driver.find_element(*WomenPage.COLOR_BLACK_CHECKBOX).click()
+        self.driver.find_element(*self.COLOR_BLACK_CHECKBOX).click()
 
     def select_color_orange_checkbox(self):
-        self.driver.find_element(*WomenPage.COLOR_ORANGE_CHECKBOX).click()
+        self.driver.find_element(*self.COLOR_ORANGE_CHECKBOX).click()
 
     def select_color_blue_checkbox(self):
-        self.driver.find_element(*WomenPage.COLOR_BLUE_CHECKBOX).click()
+        self.driver.find_element(*self.COLOR_BLUE_CHECKBOX).click()
 
     def select_color_green_checkbox(self):
-        self.driver.find_element(*WomenPage.COLOR_GREEN_CHECKBOX).click()
+        self.driver.find_element(*self.COLOR_GREEN_CHECKBOX).click()
 
     def select_color_yellow_checkbox(self):
-        self.driver.find_element(*WomenPage.COLOR_YELLOW_CHECKBOX).click()
+        self.driver.find_element(*self.COLOR_YELLOW_CHECKBOX).click()
 
     def select_color_pink_checkbox(self):
-        self.driver.find_element(*WomenPage.COLOR_PINK_CHECKBOX).click()
+        self.driver.find_element(*self.COLOR_PINK_CHECKBOX).click()
 
     def select_compositions_cotton_checkbox(self):
-        self.driver.find_element(*WomenPage.COMPOSITIONS_COTTON_CHECKBOX).click()
+        self.driver.find_element(*self.COMPOSITIONS_COTTON_CHECKBOX).click()
 
     def select_compositions_polyester_checkbox(self):
-        self.driver.find_element(*WomenPage.COMPOSITIONS_POLYESTER_CHECKBOX).click()
+        self.driver.find_element(*self.COMPOSITIONS_POLYESTER_CHECKBOX).click()
 
     def select_compositions_viscose_checkbox(self):
-        self.driver.find_element(*WomenPage.COMPOSITIONS_VISCOSE_CHECKBOX).click()
+        self.driver.find_element(*self.COMPOSITIONS_VISCOSE_CHECKBOX).click()
 
     def select_styles_casual_checkbox(self):
-        self.driver.find_element(*WomenPage.STYLES_CASUAL_CHECKBOX).click()
+        self.driver.find_element(*self.STYLES_CASUAL_CHECKBOX).click()
 
     def select_styles_dressy_checkbox(self):
-        self.driver.find_element(*WomenPage.STYLES_DRESSY_CHECKBOX).click()
+        self.driver.find_element(*self.STYLES_DRESSY_CHECKBOX).click()
 
     def select_styles_girly_checkbox(self):
-        self.driver.find_element(*WomenPage.STYLES_GIRLY_CHECKBOX).click()
+        self.driver.find_element(*self.STYLES_GIRLY_CHECKBOX).click()
 
     def select_properties_colorful_dress_checkbox(self):
-        self.driver.find_element(*WomenPage.PROPERTIES_COLORFUL_DRESS_CHECKBOX).click()
+        self.driver.find_element(*self.PROPERTIES_COLORFUL_DRESS_CHECKBOX).click()
 
     def select_properties_maxi_dress_checkbox(self):
-        self.driver.find_element(*WomenPage.PROPERTIES_MAXI_DRESS_CHECKBOX).click()
+        self.driver.find_element(*self.PROPERTIES_MAXI_DRESS_CHECKBOX).click()
 
     def select_properties_midi_dress_checkbox(self):
-        self.driver.find_element(*WomenPage.PROPERTIES_MIDI_DRESS_CHECKBOX).click()
+        self.driver.find_element(*self.PROPERTIES_MIDI_DRESS_CHECKBOX).click()
 
     def select_properties_short_dress_checkbox(self):
-        self.driver.find_element(*WomenPage.PROPERTIES_SHORT_DRESS_CHECKBOX).click()
+        self.driver.find_element(*self.PROPERTIES_SHORT_DRESS_CHECKBOX).click()
 
     def select_properties_short_sleeve_checkbox(self):
-        self.driver.find_element(*WomenPage.PROPERTIES_SHORT_SLEEVE_CHECKBOX).click()
+        self.driver.find_element(*self.PROPERTIES_SHORT_SLEEVE_CHECKBOX).click()
 
     def select_availability_in_stock_checkbox(self):
-        self.driver.find_element(*WomenPage.AVAILABILITY_IN_STOCK_CHECKBOX).click()
+        self.driver.find_element(*self.AVAILABILITY_IN_STOCK_CHECKBOX).click()
 
     def select_manufacturer_fashion_manufacturer_checkbox(self):
-        self.driver.find_element(*WomenPage.MANUFACTURER_FASHION_MANUFACTURER_CHECKBOX).click()
+        self.driver.find_element(*self.MANUFACTURER_FASHION_MANUFACTURER_CHECKBOX).click()
 
     def select_condition_new_checkbox(self):
-        self.driver.find_element(*WomenPage.CONDITION_NEW_CHECKBOX).click()
+        self.driver.find_element(*self.CONDITION_NEW_CHECKBOX).click()
 
     def click_information_delivery_link(self):
-        self.driver.find_element(*WomenPage.INFORMATION_DELIVERY_LINK).click()
+        self.driver.find_element(*self.INFORMATION_DELIVERY_LINK).click()
 
     def click_information_legal_notice_link(self):
-        self.driver.find_element(*WomenPage.INFORMATION_LEGAL_NOTICE_LINK).click()
+        self.driver.find_element(*self.INFORMATION_LEGAL_NOTICE_LINK).click()
 
     def click_information_terms_and_conditions_of_use_link(self):
-        self.driver.find_element(*WomenPage.INFORMATION_TERMS_AND_CONDITION_OF_USE_LINK).click()
+        self.driver.find_element(*self.INFORMATION_TERMS_AND_CONDITION_OF_USE_LINK).click()
 
     def click_information_about_us_link(self):
-        self.driver.find_element(*WomenPage.INFORMATION_ABOUT_US_LINK).click()
+        self.driver.find_element(*self.INFORMATION_ABOUT_US_LINK).click()
 
     def click_information_secure_payment_link(self):
-        self.driver.find_element(*WomenPage.INFORMATION_SECURE_PAYMENT_LINK).click()
+        self.driver.find_element(*self.INFORMATION_SECURE_PAYMENT_LINK).click()
 
     def click_information_our_stores_link(self):
-        self.driver.find_element(*WomenPage.INFORMATION_OUR_STORES_LINK).click()
+        self.driver.find_element(*self.INFORMATION_OUR_STORES_LINK).click()
 
     def select_subcategories_tops_thumbnail(self):
-        self.driver.find_element(*WomenPage.SUBCATEGORIES_TOPS_THUMBNAIL).click()
+        self.driver.find_element(*self.SUBCATEGORIES_TOPS_THUMBNAIL).click()
 
     def select_subcategories_dresses_thumbnail(self):
-        self.driver.find_element(*WomenPage.SUBCATEGORIES_DRESSES_THUMBNAIL).click()
+        self.driver.find_element(*self.SUBCATEGORIES_DRESSES_THUMBNAIL).click()
 
     def select_sort_by_dropdown(self, value):
-        dropdown = Select(self.driver.find_element(*WomenPage.SORT_BY_DROPDOWN))
+        dropdown = Select(self.driver.find_element(*self.SORT_BY_DROPDOWN))
         dropdown.select_by_visible_text(value)
 
     def click_view_grid_button(self):
-        self.driver.find_element(*WomenPage.VIEW_GRID_BUTTON).click()
+        self.driver.find_element(*self.VIEW_GRID_BUTTON).click()
 
     def click_list_grid_button(self):
-        self.driver.find_element(*WomenPage.VIEW_LIST_BUTTON).click()
+        self.driver.find_element(*self.VIEW_LIST_BUTTON).click()
 
     def click_blouse_thumbnail(self):
-        self.driver.find_element(*WomenPage.BLOUSE_THUMBNAIL).click()
+        self.driver.find_element(*self.BLOUSE_THUMBNAIL).click()
 
     def click_blouse_quick_view_button(self):
-        button = self.driver.find_element(*WomenPage.BLOUSE_QUICK_VIEW_BUTTON)
-        thumbnail = self.driver.find_element(*WomenPage.BLOUSE_THUMBNAIL)
+        button = self.driver.find_element(*self.BLOUSE_QUICK_VIEW_BUTTON)
+        thumbnail = self.driver.find_element(*self.BLOUSE_THUMBNAIL)
         hover = ActionChains(self.driver).move_to_element(button).move_to_element(thumbnail)
         hover.click().perform()
 
