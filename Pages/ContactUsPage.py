@@ -6,12 +6,11 @@ Created on November 24, 2019
 This module contains methods for the Contact Us page
 """
 
-from Pages.BasePageObject import BasePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
 
-class ContactUsPage(BasePage):
+class ContactUsPage(object):
     """
     Page object for Contact Us page
     """
@@ -26,27 +25,26 @@ class ContactUsPage(BasePage):
     CONTACT_US_SEND_BUTTON = (By.ID, "submitMessage")
 
     def __init__(self, driver):
-        super().__init__(driver)
         self.driver = driver
 
     def click_contact_us_menu_button(self):
-        self.driver.find_element(*ContactUsPage.CONTACT_US_MENU_BUTTON).click()
+        self.driver.find_element(*self.CONTACT_US_MENU_BUTTON).click()
 
     def click_subject_heading_dropdown(self, value):
-        dropdown = Select(self.driver.find_element(*ContactUsPage.SUBJECT_HEADING_DROPDOWN))
+        dropdown = Select(self.driver.find_element(*self.SUBJECT_HEADING_DROPDOWN))
         dropdown.select_by_visible_text(value)
 
     def input_contact_us_email_address_textbox(self, email):
-        self.driver.find_element(*ContactUsPage.CONTACT_US_EMAIL_ADDRESS_TEXTBOX).send_keys(email)
+        self.driver.find_element(*self.CONTACT_US_EMAIL_ADDRESS_TEXTBOX).send_keys(email)
 
     def input_order_reference_textbox(self, order):
-        self.driver.find_element(*ContactUsPage.ORDER_REFERENCE_TEXTBOX).send_keys(order)
+        self.driver.find_element(*self.ORDER_REFERENCE_TEXTBOX).send_keys(order)
 
     def attach_file_upload(self, path):
-        self.driver.find_element(*ContactUsPage.ATTACH_FILE_UPLOAD_BUTTON).send_keys(path)
+        self.driver.find_element(*self.ATTACH_FILE_UPLOAD_BUTTON).send_keys(path)
 
     def input_contact_us_message_textbox(self, message):
-        self.driver.find_element(*ContactUsPage.CONTACT_US_MESSAGE_TEXTBOX).send_keys(message)
+        self.driver.find_element(*self.CONTACT_US_MESSAGE_TEXTBOX).send_keys(message)
 
     def click_contact_us_send_button(self):
-        self.driver.find_element(*ContactUsPage.CONTACT_US_SEND_BUTTON).click()
+        self.driver.find_element(*self.CONTACT_US_SEND_BUTTON).click()

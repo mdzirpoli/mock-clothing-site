@@ -19,9 +19,8 @@ class ContactUsPageTests(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.get(url)
-        driver = self.driver
-        contact_us = ContactUsPage(driver)
-        contact_us.click_contact_us_menu_button()
+        self.contact_us = ContactUsPage(self.driver)
+        self.contact_us.click_contact_us_menu_button()
 
     def tearDown(self):
         time.sleep(2)
@@ -29,45 +28,27 @@ class ContactUsPageTests(unittest.TestCase):
 
     @unittest.skip("pass")
     def test_select_subject_heading_dropdown(self):
-        driver = self.driver
-        contact_us = ContactUsPage(driver)
-        contact_us.click_subject_heading_dropdown("Webmaster")
-
-    @unittest.skip("pass")
-    def test_input_create_account_email_address_textbox(self):
-        driver = self.driver
-        contact_us = ContactUsPage(driver)
-        contact_us.click_contact_us_menu_button()
+        self.contact_us.click_subject_heading_dropdown("Webmaster")
 
     @unittest.skip("pass")
     def test_input_contact_us_email_address_textbox(self):
-        driver = self.driver
-        contact_us = ContactUsPage(driver)
-        contact_us.input_contact_us_email_address_textbox("email@email.com")
+        self.contact_us.input_contact_us_email_address_textbox("email@email.com")
 
     @unittest.skip("pass")
     def test_input_order_reference_textbox(self):
-        driver = self.driver
-        contact_us = ContactUsPage(driver)
-        contact_us.input_order_reference_textbox("432190")
+        self.contact_us.input_order_reference_textbox("432190")
 
     @unittest.skip("pass")
     def test_attach_file_upload(self):
-        driver = self.driver
-        contact_us = ContactUsPage(driver)
-        contact_us.attach_file_upload("/Users/mark/Desktop/Programming/test.pdf")
+        self.contact_us.attach_file_upload("/Users/mark/Desktop/Programming/test.pdf")
 
     @unittest.skip("pass")
     def test_input_contact_us_message_textbox(self):
-        driver = self.driver
-        contact_us = ContactUsPage(driver)
-        contact_us.input_contact_us_message_textbox("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+        self.contact_us.input_contact_us_message_textbox("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
 
     @unittest.skip("pass")
     def test_click_contact_us_send_button(self):
-        driver = self.driver
-        contact_us = ContactUsPage(driver)
-        contact_us.click_contact_us_send_button()
+        self.contact_us.click_contact_us_send_button()
 
 
 if __name__ == '__main__':
