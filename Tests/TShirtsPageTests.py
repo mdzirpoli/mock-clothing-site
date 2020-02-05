@@ -115,8 +115,5 @@ class TShirtPageTests(unittest.TestCase):
         self.tshirts.click_printed_chiffon_dress_quick_view_button()
 
 
-
-
-
 if __name__ == '__main__':
     unittest.main()
