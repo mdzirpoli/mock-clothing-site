@@ -6,7 +6,7 @@ Created on February 8, 2020
 This module contains the unit tests for the Search Box
 """
 
-from Pages.SearchBox import SearchBox
+from Pages.Components.SearchBox import SearchBox
 from selenium import webdriver
 import unittest
 import time
