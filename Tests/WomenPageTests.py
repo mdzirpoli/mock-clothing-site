@@ -187,8 +187,16 @@ class WomenPageTests(unittest.TestCase):
         self.women.click_blouse_thumbnail()
 
     @unittest.skip("pass")
-    def test_click_blouse_quick_view_button(self):
-        self.women.click_blouse_quick_view_button()
+    def test_click_blouse_hover_quick_view_button(self):
+        self.women.click_blouse_hover_quick_view_button()
+
+    @unittest.skip("pass")
+    def test_click_blouse_hover_add_to_cart_button(self):
+        self.women.click_blouse_hover_add_to_cart_button()
+
+    @unittest.skip("pass")
+    def test_click_blouse_hover_more_button(self):
+        self.women.click_blouse_hover_more_button()
 
 
 if __name__ == '__main__':
