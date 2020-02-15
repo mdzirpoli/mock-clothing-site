@@ -89,6 +89,8 @@ class WomenPage(object):
     BLOUSE_QUICK_VIEW_BUTTON = (By.XPATH, "//*[@id='center_column']/ul/li[2]/div/div[1]/div/a[2]")
     BLOUSE_ADD_TO_CART_BUTTON = (By.XPATH, "//*[@id='center_column']/ul/li[2]/div/div[2]/div[2]/a[1]")
     BLOUSE_MORE_BUTTON = (By.XPATH, "//*[@id='center_column']/ul/li[2]/div/div[2]/div[2]/a[2]/span")
+    BLOUSE_ADD_TO_WISHLIST_BUTTON = (By.XPATH, "//*[@id='center_column']/ul/li[2]/div/div[3]/div[1]/a")
+    BLOUSE_ADD_TO_COMPARE_BUTTON = (By.XPATH, "//*[@id='center_column']/ul/li[2]/div/div[3]/div[1]/a")
 
     def __init__(self, driver):
         self.driver = driver
@@ -232,6 +234,16 @@ class WomenPage(object):
 
     def click_blouse_hover_more_button(self):
         button = self.driver.find_element(*self.BLOUSE_MORE_BUTTON)
+        product = self.driver.find_element(*self.BLOUSE_PRODUCT)
+        ActionChains(self.driver).move_to_element(product).click(button).perform()
+
+    def click_blouse_hover_add_to_wishlist_button(self):
+        button = self.driver.find_element(*self.BLOUSE_ADD_TO_WISHLIST_BUTTON)
+        product = self.driver.find_element(*self.BLOUSE_PRODUCT)
+        ActionChains(self.driver).move_to_element(product).click(button).perform()
+
+    def click_blouse_hover_add_to_compare_button(self):
+        button = self.driver.find_element(*self.BLOUSE_ADD_TO_COMPARE_BUTTON)
         product = self.driver.find_element(*self.BLOUSE_PRODUCT)
         ActionChains(self.driver).move_to_element(product).click(button).perform()
 

@@ -198,6 +198,14 @@ class WomenPageTests(unittest.TestCase):
     def test_click_blouse_hover_more_button(self):
         self.women.click_blouse_hover_more_button()
 
+    @unittest.skip("pass")
+    def test_click_blouse_hover_add_to_wishlist_button(self):
+        self.women.click_blouse_hover_add_to_wishlist_button()
+
+    @unittest.skip("pass")
+    def test_click_blouse_hover_add_to_compare_button(self):
+        self.women.click_blouse_hover_add_to_compare_button()
+
 
 if __name__ == '__main__':
     unittest.main()
