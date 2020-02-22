@@ -77,6 +77,12 @@ class DressesPage(object):
     DRESSES_INFORMATION_SECURE_PAYMENT_LINK = (By.XPATH, "//*[@title='Secure payment']")
     DRESSES_INFORMATION_OUR_STORES_LINK = (By.XPATH, "//*[@title='Our stores']")
 
+    # Specials
+    DRESSES_ALL_SPECIALS_BUTTON = (By.XPATH, "//span[text()='All specials']")
+
+    # Our Stores
+    DRESSES_DISCOVER_OUR_STORES_BUTTON = (By.XPATH, "//span[text()='Discover our stores']")
+
     # Products locators
     SUBCATEGORIES_CASUAL_DRESSES_THUMBNAIL = (By.XPATH, "//*[@id='subcategories']/ul/li[1]/div[1]/a/img")
     SUBCATEGORIES_EVENING_DRESSES_THUMBNAIL = (By.XPATH, "//*[@id='subcategories']/ul/li[2]/div[1]/a/img")
@@ -204,6 +210,12 @@ class DressesPage(object):
 
     def click_dresses_information_our_stores_link(self):
         self.driver.find_element(*self.DRESSES_INFORMATION_OUR_STORES_LINK).click()
+
+    def click_dresses_all_specials_button(self):
+        self.driver.find_element(*self.DRESSES_ALL_SPECIALS_BUTTON).click()
+
+    def click_dresses_discover_our_stores_button(self):
+        self.driver.find_element(*self.DRESSES_DISCOVER_OUR_STORES_BUTTON).click()
 
     def select_subcategories_casual_dresses_thumbnail(self):
         self.driver.find_element(*self.SUBCATEGORIES_CASUAL_DRESSES_THUMBNAIL).click()

@@ -171,6 +171,14 @@ class DressesPageTests(unittest.TestCase):
         self.dresses.click_dresses_information_our_stores_link()
 
     @unittest.skip("pass")
+    def test_click_dresses_all_specials_button(self):
+        self.dresses.click_dresses_all_specials_button()
+
+    @unittest.skip("pass")
+    def test_click_dresses_discover_our_stores_button(self):
+        self.dresses.click_dresses_discover_our_stores_button()
+
+    @unittest.skip("pass")
     def test_select_subcategories_casual_dresses_thumbnail(self):
         self.dresses.select_subcategories_casual_dresses_thumbnail()
 
