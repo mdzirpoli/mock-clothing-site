@@ -163,6 +163,14 @@ class WomenPageTests(unittest.TestCase):
         self.women.click_information_our_stores_link()
 
     @unittest.skip("pass")
+    def test_click_women_all_specials_button(self):
+        self.women.click_women_all_specials_button()
+
+    @unittest.skip("pass")
+    def test_click_women_discover_our_stores_button(self):
+        self.women.click_women_discover_our_stores_button()
+
+    @unittest.skip("pass")
     def test_select_subcategories_tops_thumbnail(self):
         self.women.select_subcategories_tops_thumbnail()
 

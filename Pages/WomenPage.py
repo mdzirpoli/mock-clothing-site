@@ -76,6 +76,12 @@ class WomenPage(object):
     INFORMATION_SECURE_PAYMENT_LINK = (By.XPATH, "//*[@id='informations_block_left_1']/div/ul/li[5]/a")
     INFORMATION_OUR_STORES_LINK = (By.XPATH, "//*[@id='informations_block_left_1']/div/ul/li[6]/a")
 
+    # Specials
+    WOMEN_ALL_SPECIALS_BUTTON = (By.XPATH, "//span[text()='All specials']")
+
+    # Our Stores
+    WOMEN_DISCOVER_OUR_STORES_BUTTON = (By.XPATH, "//span[text()='Discover our stores']")
+
     # Products locators
     SUBCATEGORIES_TOPS_THUMBNAIL = (By.XPATH, "/html/body/div/div[2]/div/div[3]/div[2]/div[2]/ul/li[1]/div[1]/a/img")
     SUBCATEGORIES_DRESSES_THUMBNAIL = (By.XPATH, "//*[@id='subcategories']/ul/li[2]/div[1]/a/img")
@@ -202,6 +208,12 @@ class WomenPage(object):
 
     def click_information_our_stores_link(self):
         self.driver.find_element(*self.INFORMATION_OUR_STORES_LINK).click()
+
+    def click_women_all_specials_button(self):
+        self.driver.find_element(*self.WOMEN_ALL_SPECIALS_BUTTON).click()
+
+    def click_women_discover_our_stores_button(self):
+        self.driver.find_element(*self.WOMEN_DISCOVER_OUR_STORES_BUTTON).click()
 
     def select_subcategories_tops_thumbnail(self):
         self.driver.find_element(*self.SUBCATEGORIES_TOPS_THUMBNAIL).click()
