@@ -54,6 +54,12 @@ class TShirtsPage(object):
     TSHIRTS_INFORMATION_SECURE_PAYMENT_LINK = (By.XPATH, "//*[@title='Secure payment']")
     TSHIRTS_INFORMATION_OUR_STORES_LINK = (By.XPATH, "//*[@title='Our stores']")
 
+    # Specials
+    TSHIRTS_ALL_SPECIALS_BUTTON = (By.XPATH, "//span[text()='All specials']")
+
+    # Our Stores
+    TSHIRTS_DISCOVER_OUR_STORES_BUTTON = (By.XPATH, "//span[text()='Discover our stores']")
+
     # Products locators
     TSHIRTS_SORT_BY_DROPDOWN = (By.ID, "selectProductSort")
     TSHIRTS_VIEW_GRID_BUTTON = (By.XPATH, "//*[@id='grid']/a/i")
@@ -121,6 +127,12 @@ class TShirtsPage(object):
 
     def click_tshirts_our_stores_link(self):
         self.driver.find_element(*self.TSHIRTS_INFORMATION_OUR_STORES_LINK).click()
+
+    def click_tshirts_all_specials_button(self):
+        self.driver.find_element(*self.TSHIRTS_ALL_SPECIALS_BUTTON).click()
+
+    def click_tshirts_discover_our_stores_button(self):
+        self.driver.find_element(*self.TSHIRTS_DISCOVER_OUR_STORES_BUTTON).click()
 
     def select_tshirts_sort_by_dropdown(self, value):
         dropdown = Select(self.driver.find_element(*self.TSHIRTS_SORT_BY_DROPDOWN))

@@ -95,6 +95,14 @@ class TShirtPageTests(unittest.TestCase):
         self.tshirts.click_tshirts_our_stores_link()
 
     @unittest.skip("pass")
+    def test_click_tshirts_all_specials_button(self):
+        self.tshirts.click_tshirts_all_specials_button()
+
+    @unittest.skip("pass")
+    def test_click_tshirts_discover_our_stores_button(self):
+        self.tshirts.click_tshirts_discover_our_stores_button()
+
+    @unittest.skip("pass")
     def test_select_tshirts_sort_by_dropdown(self):
         self.tshirts.select_tshirts_sort_by_dropdown("In stock")
 
