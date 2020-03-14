@@ -56,7 +56,7 @@ class CheckoutShippingPageTests(unittest.TestCase):
     @unittest.skip("pass")
     def test_click_checkout_shipping_read_the_terms_of_service(self):
         time.sleep(2)
-        self.shipping.click_checkout_shipping_read_the_terms_of_service()
+        self.shipping.click_checkout_shipping_read_the_terms_of_service_link()
 
     @unittest.skip("pass")
     def test_click_checkout_shipping_continue_shopping_link(self):

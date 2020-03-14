@@ -25,7 +25,7 @@ class CheckoutShippingPage(object):
     def click_checkout_shipping_terms_of_service_checkbox(self):
         self.driver.find_element(*self.CHECKOUT_SHIPPING_TERMS_OF_SERVICE_CHECKBOX).click()
 
-    def click_checkout_shipping_read_the_terms_of_service(self):
+    def click_checkout_shipping_read_the_terms_of_service_link(self):
         self.driver.find_element(*self.CHECKOUT_SHIPPING_READ_THE_TERMS_OF_SERVICE_LINK).click()
 
     def click_checkout_shipping_continue_shopping_link(self):
