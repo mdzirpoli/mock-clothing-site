@@ -6,8 +6,8 @@ Created on February 8, 2020
 This module contains the unit tests for the Women Blouse Product Details page
 """
 
-from Pages.ProductDetailsPage import ProductDetailsPage
-from Pages.WomenPage import WomenPage
+from pages.product_details_page import ProductDetailsPage
+from pages.women_page import WomenPage
 from selenium import webdriver
 import unittest
 import time

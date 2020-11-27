@@ -6,7 +6,7 @@ Created on February 2, 2020
 This module contains the unit tests for the Footer links
 """
 
-from Pages.FooterPage import FooterPage
+from pages.footer_page import FooterPage
 from selenium import webdriver
 import unittest
 import time

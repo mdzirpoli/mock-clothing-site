@@ -6,7 +6,7 @@ Created on December 1, 2019
 This module contains the unit tests for the Women page
 """
 
-from Pages.WomenPage import WomenPage
+from pages.women_page import WomenPage
 from selenium import webdriver
 import unittest
 import time

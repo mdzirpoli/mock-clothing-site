@@ -6,9 +6,9 @@ Created on February 15, 2020
 This module contains the unit tests for the Send To A Friend Modal
 """
 
-from Pages.Components.Modals.SendToAFriendModal import SendToAFriendModal
-from Pages.ProductDetailsPage import ProductDetailsPage
-from Pages.WomenPage import WomenPage
+from pages.components.modals.send_to_a_friend_modal import SendToAFriendModal
+from pages.product_details_page import ProductDetailsPage
+from pages.women_page import WomenPage
 from selenium import webdriver
 import unittest
 import time

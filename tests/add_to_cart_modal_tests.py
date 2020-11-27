@@ -6,9 +6,9 @@ Created on February 29, 2020
 This module contains the unit tests for the Add To Cart Modal
 """
 
-from Pages.ProductDetailsPage import ProductDetailsPage
-from Pages.WomenPage import WomenPage
-from Pages.Components.Modals.AddToCartModal import AddToCartModal
+from pages.product_details_page import ProductDetailsPage
+from pages.women_page import WomenPage
+from pages.components.modals.add_to_cart_modal import AddToCartModal
 from selenium import webdriver
 import unittest
 import time

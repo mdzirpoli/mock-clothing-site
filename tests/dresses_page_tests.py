@@ -6,7 +6,7 @@ Created on January 20, 2020
 This module contains the unit tests for the Dresses page
 """
 
-from Pages.DressesPage import DressesPage
+from pages.dresses_page import DressesPage
 from selenium import webdriver
 import unittest
 import time

@@ -6,7 +6,7 @@ Created on January 26, 2020
 This module contains the unit tests for the T-Shirts page
 """
 
-from Pages.TShirtsPage import TShirtsPage
+from pages.tshirts_page import TShirtsPage
 from selenium import webdriver
 import unittest
 import time

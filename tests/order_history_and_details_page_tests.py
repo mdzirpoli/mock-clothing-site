@@ -6,9 +6,9 @@ Created on April 4, 2020
 This module contains the unit tests for the Order History And Details page
 """
 
-from Pages.MyAccountPage import MyAccountPage
-from Pages.SignInPage import SignInPage
-from Pages.OrderHistoryAndDetailsPage import OrderHistoryAndDetailsPage
+from pages.my_account_page import MyAccountPage
+from pages.sign_in_page import SignInPage
+from pages.order_history_and_details_page import OrderHistoryAndDetailsPage
 from selenium import webdriver
 import unittest
 import time

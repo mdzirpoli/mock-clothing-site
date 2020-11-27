@@ -6,10 +6,10 @@ Created on February 15, 2020
 This module contains the unit tests for Write A Review Modal
 """
 
-from Pages.SignInPage import SignInPage
-from Pages.Components.Modals.WriteAReviewModal import WriteAReviewModal
-from Pages.ProductDetailsPage import ProductDetailsPage
-from Pages.WomenPage import WomenPage
+from pages.sign_in_page import SignInPage
+from pages.components.modals.write_a_review_modal import WriteAReviewModal
+from pages.product_details_page import ProductDetailsPage
+from pages.women_page import WomenPage
 from selenium import webdriver
 import unittest
 import time

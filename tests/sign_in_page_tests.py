@@ -6,7 +6,7 @@ Created on November 16, 2019
 This module contains the unit tests for the Sign In page
 """
 
-from Pages.SignInPage import SignInPage
+from pages.sign_in_page import SignInPage
 from selenium import webdriver
 import unittest
 import time
