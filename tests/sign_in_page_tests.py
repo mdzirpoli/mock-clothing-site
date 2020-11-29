@@ -1,5 +1,6 @@
 """
 Created on November 16, 2019
+Modified on November 29, 2020
 
 @author: Mark Zirpoli
 
@@ -28,7 +29,8 @@ class SignInPageTests(unittest.TestCase):
 
     @unittest.skip("pass")
     def test_input_create_account_email_address_textbox(self):
-        self.sign_in.input_create_account_email_address_textbox("joesmith@email.com")
+        self.sign_in.\
+            input_create_account_email_address_textbox("joesmith@email.com")
 
     @unittest.skip("pass")
     def test_click_create_an_account_button(self):

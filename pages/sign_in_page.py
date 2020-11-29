@@ -1,47 +1,47 @@
 """
 Created on November 16, 2019
+Modified on November 29, 2020
 
 @author: Mark Zirpoli
 
 This module contains methods for the Sign In page
 """
-from selenium.webdriver.common.by import By
+from elements import Button, TextField
 
 
 class SignInPage(object):
     """
     Page object for Sign In page
     """
-
-    # Sign In page locators
-    SIGN_IN_MENU_BUTTON = (By.XPATH, "//*[@id='header']/div[2]/div/div/nav/div[1]/a")
-    CREATE_ACCOUNT_EMAIL_ADDRESS_TEXTBOX = (By.ID, "email_create")
-    CREATE_AN_ACCOUNT_BUTTON = (By.ID, "SubmitCreate")
-    EMAIL_ADDRESS_TEXTBOX = (By.ID, "email")
-    PASSWORD_TEXTBOX = (By.ID, "passwd")
-    SIGN_IN_BUTTON = (By.ID, "SubmitLogin")
-    FORGOT_YOUR_PASSWORD_LINK = (By.XPATH, "//*[@id='login_form']/div/p[1]/a")
-
     def __init__(self, driver):
         self.driver = driver
 
     def click_sign_in_menu_button(self):
-        self.driver.find_element(*self.SIGN_IN_MENU_BUTTON).click()
+        sign_in = Button(self.driver,
+                         xpath="//*[@id='header']/div[2]/div/div/nav/div[1]/a")
+        sign_in.click()
 
     def input_create_account_email_address_textbox(self, email):
-        self.driver.find_element(*self.CREATE_ACCOUNT_EMAIL_ADDRESS_TEXTBOX).send_keys(email)
+        input_email = TextField(self.driver, div_id="email_create")
+        input_email.input_text(email)
 
     def click_create_an_account_button(self):
-        self.driver.find_element(*self.CREATE_AN_ACCOUNT_BUTTON).click()
+        create_account_button = Button(self.driver, div_id="SubmitCreate")
+        create_account_button.click()
 
     def input_email_address_textbox(self, email):
-        self.driver.find_element(*self.EMAIL_ADDRESS_TEXTBOX).send_keys(email)
+        input_email_address = TextField(self.driver, div_id="email")
+        input_email_address.input_text(email)
 
     def input_password_textbox(self, password):
-        self.driver.find_element(*self.PASSWORD_TEXTBOX).send_keys(password)
+        input_password = TextField(self.driver, div_id="passwd")
+        input_password.input_text(password)
 
     def click_sign_in_button(self):
-        self.driver.find_element(*self.SIGN_IN_BUTTON).click()
+        sign_in_button = Button(self.driver, div_id="SubmitLogin")
+        sign_in_button.click()
 
     def click_forgot_your_password_link(self):
-        self.driver.find_element(*self.FORGOT_YOUR_PASSWORD_LINK).click()
+        forgot_password = Button(self.driver,
+                                 xpath="//*[@id='login_form']/div/p[1]/a")
+        forgot_password.click()
