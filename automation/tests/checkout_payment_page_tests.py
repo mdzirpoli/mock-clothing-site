@@ -1,20 +1,19 @@
 """
-Created on May 30, 2020
+Created on March 14, 2020
 
 @author: Mark Zirpoli
 
-This module contains the unit tests for the Check Payment page
+This module contains the unit tests for the Checkout Payment page
 """
 
-from pages.product_details_page import ProductDetailsPage
-from pages.components.modals.add_to_cart_modal import AddToCartModal
-from pages.checkout_summary_page import CheckoutSummaryPage
-from pages.checkout_address_page import CheckoutAddressPage
-from pages.checkout_shipping_page import CheckoutShippingPage
-from pages.checkout_payment_page import CheckoutPaymentPage
-from pages.check_payment_page import CheckPaymentPage
-from pages.sign_in_page import SignInPage
-from pages.women_page import WomenPage
+from automation.pages.product_details_page import ProductDetailsPage
+from automation.pages.components.modals.add_to_cart_modal import AddToCartModal
+from automation.pages.checkout_summary_page import CheckoutSummaryPage
+from automation.pages.checkout_address_page import CheckoutAddressPage
+from automation.pages.checkout_shipping_page import CheckoutShippingPage
+from automation.pages.checkout_payment_page import CheckoutPaymentPage
+from automation.pages.sign_in_page import SignInPage
+from automation.pages.women_page import WomenPage
 from selenium import webdriver
 import unittest
 import time
@@ -22,7 +21,7 @@ import time
 url = "http://automationpractice.com/index.php"
 
 
-class CheckPaymentPageTests(unittest.TestCase):
+class CheckoutPaymentPageTests(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome()
@@ -48,24 +47,25 @@ class CheckPaymentPageTests(unittest.TestCase):
         self.shipping.click_checkout_shipping_terms_of_service_checkbox()
         self.shipping.click_checkout_shipping_proceed_to_checkout_button()
         self.payment = CheckoutPaymentPage(self.driver)
-        self.payment.click_checkout_payment_pay_by_check_button()
-        self.check_payment = CheckPaymentPage(self.driver)
 
     def tearDown(self):
         time.sleep(2)
         self.driver.close()
 
     @unittest.skip("pass")
-    def test_click_check_payment_other_payment_methods_link(self):
-        self.check_payment.click_check_payment_other_payment_methods_link()
+    def test_click_checkout_payment_pay_by_bank_wire_button(self):
+        time.sleep(2)
+        self.payment.click_checkout_payment_pay_by_bank_wire_button()
 
     @unittest.skip("pass")
-    def test_click_check_payment_i_confirm_my_order_button(self):
-        self.check_payment.click_check_payment_i_confirm_my_order_button()
+    def test_click_checkout_payment_pay_by_check_button(self):
+        time.sleep(2)
+        self.payment.click_checkout_payment_pay_by_check_button()
 
     @unittest.skip("pass")
-    def test_verify_check_payment_text(self):
-        self.check_payment.verify_check_payment_text("Check payment")
+    def test_click_checkout_payment_continue_shopping_link(self):
+        time.sleep(2)
+        self.payment.click_checkout_payment_continue_shopping_link()
 
 
 if __name__ == '__main__':
