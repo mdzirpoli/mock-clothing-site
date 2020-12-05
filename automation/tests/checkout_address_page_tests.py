@@ -1,5 +1,6 @@
 """
 Created on March 8, 2020
+Modified on December 5, 2020
 
 @author: Mark Zirpoli
 
@@ -48,12 +49,17 @@ class CheckoutAddressPageTests(unittest.TestCase):
     @unittest.skip("pass")
     def test_select_choose_a_deliver_address_dropdown(self):
         time.sleep(2)
-        self.address.select_choose_a_deliver_address_dropdown("test@email.com")
+        self.address.select_choose_a_deliver_address_dropdown("Home address")
 
     @unittest.skip("pass")
-    def test_click_delivery_address_as_billing_address(self):
+    def test_check_delivery_address_as_billing_checkbox(self):
         time.sleep(2)
-        self.address.click_delivery_address_as_billing_address()
+        self.address.check_delivery_address_as_billing_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_delivery_address_as_billing_checkbox(self):
+        time.sleep(2)
+        self.address.uncheck_delivery_address_as_billing_checkbox()
 
     @unittest.skip("pass")
     def test_click_your_delivery_address_update_button(self):
@@ -73,7 +79,8 @@ class CheckoutAddressPageTests(unittest.TestCase):
     @unittest.skip("pass")
     def test_input_comment_on_your_order_textbox(self):
         time.sleep(2)
-        self.address.input_comment_on_your_order_textbox("Comment about my order")
+        self.address.\
+            input_comment_on_your_order_textbox("Comment about my order")
 
     @unittest.skip("pass")
     def test_click_checkout_address_continue_shopping_link(self):

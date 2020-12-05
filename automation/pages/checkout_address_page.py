@@ -1,51 +1,65 @@
 """
 Created on March 8, 2020
+Modified on December 5, 2020
 
 @author: Mark Zirpoli
 
 This module contains methods for the Checkout Address page
 """
-from selenium.webdriver.common.by import By
+from automation.elements import Button, Link, DropDown, CheckBox, TextField
 
 
 class CheckoutAddressPage(object):
     """
     Page object for Checkout Address page
     """
-
-    # Checkout Address page locators
-    CHECKOUT_ADDRESS_DELIVERY_ADDRESS_DROPDOWN = (By.ID, "id_address_delivery")
-    CHECKOUT_ADDRESS_DELIVERY_ADDRESS_AS_BILLING_ADDRESS_CHECKBOX = (By.ID, "addressesAreEquals")
-    CHECKOUT_ADDRESS_DELIVERY_ADDRESS_UPDATE_BUTTON = (By.XPATH, "//*[@id='address_delivery']/li[7]/a/span")
-    CHECKOUT_ADDRESS_BILLING_ADDRESS_UPDATE_BUTTON = (By.XPATH, "//*[@id='address_invoice']/li[7]/a/span")
-    CHECKOUT_ADDRESS_ADD_A_NEW_ADDRESS_BUTTON = (By.XPATH, "//*[@id='center_column']/form/div/p/a/span")
-    CHECKOUT_ADDRESS_COMMENT_TO_ORDER_TEXTBOX = (By.NAME, "message")
-    CHECKOUT_ADDRESS_CONTINUE_SHOPPING_LINK = (By.XPATH, "//*[@title='Previous']")
-    CHECKOUT_ADDRESS_PROCEED_TO_CHECKOUT_BUTTON = (By.XPATH, "//*[@id='center_column']/form/p/button/span")
-
     def __init__(self, driver):
         self.driver = driver
 
-    def select_choose_a_deliver_address_dropdown(self, email):
-        self.driver.find_element(*self.CHECKOUT_ADDRESS_DELIVERY_ADDRESS_DROPDOWN).send_keys(email)
+    def select_choose_a_deliver_address_dropdown(self, address: str):
+        choose_deliver_address_dropdown = \
+            DropDown(self.driver, div_id="id_address_delivery")
+        choose_deliver_address_dropdown.select_dropdown(address)
 
-    def click_delivery_address_as_billing_address(self):
-        self.driver.find_element(*self.CHECKOUT_ADDRESS_DELIVERY_ADDRESS_AS_BILLING_ADDRESS_CHECKBOX).click()
+    def check_delivery_address_as_billing_checkbox(self):
+        delivery_address_as_billing = CheckBox(self.driver,
+                                               div_id="addressesAreEquals")
+        delivery_address_as_billing.check()
+
+    def uncheck_delivery_address_as_billing_checkbox(self):
+        delivery_address_as_billing = CheckBox(self.driver,
+                                               div_id="addressesAreEquals")
+        delivery_address_as_billing.uncheck()
 
     def click_your_delivery_address_update_button(self):
-        self.driver.find_element(*self.CHECKOUT_ADDRESS_DELIVERY_ADDRESS_UPDATE_BUTTON).click()
+        your_deliver_address_update = \
+            Button(self.driver,
+                   xpath="//*[@id='address_delivery']/li[7]/a/span")
+        your_deliver_address_update.click()
 
     def click_your_billing_address_update_button(self):
-        self.driver.find_element(*self.CHECKOUT_ADDRESS_BILLING_ADDRESS_UPDATE_BUTTON).click()
+        your_billing_address_update = \
+            Button(self.driver,
+                   xpath="//*[@id='address_invoice']/li[7]/a/span")
+        your_billing_address_update.click()
 
     def click_add_a_new_address_button(self):
-        self.driver.find_element(*self.CHECKOUT_ADDRESS_ADD_A_NEW_ADDRESS_BUTTON).click()
+        add_new_address = \
+            Button(self.driver,
+                   xpath="//*[@id='center_column']/form/div/p/a/span")
+        add_new_address.click()
 
-    def input_comment_on_your_order_textbox(self, text):
-        self.driver.find_element(*self.CHECKOUT_ADDRESS_COMMENT_TO_ORDER_TEXTBOX).send_keys(text)
+    def input_comment_on_your_order_textbox(self, text: str):
+        comment_on_your_order = TextField(self.driver, div_name="message")
+        comment_on_your_order.input_text(text)
 
     def click_checkout_address_continue_shopping_link(self):
-        self.driver.find_element(*self.CHECKOUT_ADDRESS_CONTINUE_SHOPPING_LINK).click()
+        checkout_address_continue_shopping = \
+            Link(self.driver, xpath="//*[@title='Previous']")
+        checkout_address_continue_shopping.click()
 
     def click_checkout_address_proceed_to_checkout_button(self):
-        self.driver.find_element(*self.CHECKOUT_ADDRESS_PROCEED_TO_CHECKOUT_BUTTON).click()
+        checkout_address_proceed_to_checkout = \
+            Button(self.driver,
+                   xpath="//*[@id='center_column']/form/p/button/span")
+        checkout_address_proceed_to_checkout.click()
