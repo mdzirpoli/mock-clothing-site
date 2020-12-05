@@ -21,7 +21,7 @@ class SignInPage(object):
                          xpath="//*[@id='header']/div[2]/div/div/nav/div[1]/a")
         sign_in.click()
 
-    def input_create_account_email_address_textbox(self, email):
+    def input_create_account_email_address_textbox(self, email: str):
         input_email = TextField(self.driver, div_id="email_create")
         input_email.input_text(email)
 
@@ -29,11 +29,11 @@ class SignInPage(object):
         create_account_button = Button(self.driver, div_id="SubmitCreate")
         create_account_button.click()
 
-    def input_email_address_textbox(self, email):
+    def input_email_address_textbox(self, email: str):
         input_email_address = TextField(self.driver, div_id="email")
         input_email_address.input_text(email)
 
-    def input_password_textbox(self, password):
+    def input_password_textbox(self, password: str):
         input_password = TextField(self.driver, div_id="passwd")
         input_password.input_text(password)
 

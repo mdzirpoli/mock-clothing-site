@@ -27,7 +27,7 @@ class BankWirePaymentPage(object):
                    xpath="//*[contains(text(), 'I confirm my order')]")
         bank_wire_confirm_my_order.click()
 
-    def verify_bank_wire_text(self, text):
+    def verify_bank_wire_text(self, text: str):
         try:
             self.driver.find_element_by_xpath("//*[contains(text(),'"
                                               + text + "')]")

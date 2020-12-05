@@ -27,7 +27,7 @@ class CheckPaymentPage(object):
                    xpath="//*[contains(text(), 'I confirm my order')]")
         check_payment_confirm_my_order.click()
 
-    def verify_check_payment_text(self, text):
+    def verify_check_payment_text(self, text: str):
         try:
             self.driver.find_element_by_xpath("//*[contains(text(),'"
                                               + text + "')]")
