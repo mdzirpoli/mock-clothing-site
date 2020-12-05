@@ -45,6 +45,21 @@ class Button(Element):
             print(e)
 
 
+class Link(Element):
+    """
+    Class that implements a link object
+    """
+    def __init__(self, driver: webdriver, div_id=None, xpath=None,
+                 div_name=None):
+        super().__init__(driver, div_id, xpath, div_name)
+
+    def click(self):
+        try:
+            self.element.click()
+        except Exception as e:
+            print(e)
+
+
 class DropDown(Element):
     """
     Class that implements a dropdown object
