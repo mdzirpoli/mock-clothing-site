@@ -1,13 +1,13 @@
 """
 Created on January 26, 2020
+Modified on December 6, 2020
 
 @author: Mark Zirpoli
 
 This module contains methods for the T-Shirts page
 """
 
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select
+from automation.elements import Button, Link, CheckBox, DropDown
 from selenium.webdriver import ActionChains
 
 
@@ -15,144 +15,189 @@ class TShirtsPage(object):
     """
     Page object for T-Shirts page
     """
-
-    # T-shirts page navigation menu locator
-    TSHIRTS_NAV_MENU_BUTTON = (By.XPATH, "//*[@id='block_top_menu']/ul/li[3]/a")
-
-    # Size locators
-    TSHIRTS_SIZE_SMALL_CHECKBOX = (By.ID, "layered_id_attribute_group_1")
-    TSHIRTS_SIZE_MEDIUM_CHECKBOX = (By.ID, "layered_id_attribute_group_2")
-    TSHIRTS_SIZE_LARGE_CHECKBOX = (By.ID, "layered_id_attribute_group_3")
-
-    # Color locators
-    TSHIRTS_COLOR_ORANGE_CHECKBOX = (By.ID, "layered_id_attribute_group_13")
-    TSHIRTS_COLOR_BLUE_CHECKBOX = (By.ID, "layered_id_attribute_group_14")
-
-    # Compositions locators
-    TSHIRTS_COMPOSITIONS_COTTON_CHECKBOX = (By.ID, "layered_id_feature_5")
-
-    # Styles locators
-    TSHIRTS_STYLES_CASUAL_CHECKBOX = (By.ID, "layered_id_feature_11")
-
-    # Properties locators
-    TSHIRTS_PROPERTIES_SHORT_SLEEVE_CHECKBOX = (By.ID, "layered_id_feature_17")
-
-    # Availability locators
-    TSHIRTS_AVAILABILITY_IN_STOCK_CHECKBOX = (By.ID, "layered_quantity_1")
-
-    # Manufacturer locators
-    TSHIRTS_MANUFACTURER_FASHION_MANUFACTURER_CHECKBOX = (By.ID, "layered_manufacturer_1")
-
-    # Condition locators
-    TSHIRTS_CONDITION_NEW_CHECKBOX = (By.ID, "layered_condition_new")
-
-    # Information locators
-    TSHIRTS_INFORMATION_DELIVERY_LINK = (By.XPATH, "//*[@title='Delivery']")
-    TSHIRTS_INFORMATION_LEGAL_NOTICE_LINK = (By.XPATH, "//*[@title='Legal Notice']")
-    TSHIRTS_INFORMATION_TERMS_AND_CONDITION_OF_USE_LINK = (By.XPATH, "//*[@title='Terms and conditions of use']")
-    TSHIRTS_INFORMATION_ABOUT_US_LINK = (By.XPATH, "//*[@title='About us']")
-    TSHIRTS_INFORMATION_SECURE_PAYMENT_LINK = (By.XPATH, "//*[@title='Secure payment']")
-    TSHIRTS_INFORMATION_OUR_STORES_LINK = (By.XPATH, "//*[@title='Our stores']")
-
-    # Specials
-    TSHIRTS_ALL_SPECIALS_BUTTON = (By.XPATH, "//span[text()='All specials']")
-
-    # Our Stores
-    TSHIRTS_DISCOVER_OUR_STORES_BUTTON = (By.XPATH, "//span[text()='Discover our stores']")
-
-    # Products locators
-    TSHIRTS_SORT_BY_DROPDOWN = (By.ID, "selectProductSort")
-    TSHIRTS_VIEW_GRID_BUTTON = (By.XPATH, "//*[@id='grid']/a/i")
-    TSHIRTS_VIEW_LIST_BUTTON = (By.XPATH, "//*[@id='list']/a/i")
-
-    # Faded Short Sleeve T-Shirt locators
-    FADED_SHORT_SLEEVE_TSHIRT_THUMBNAIL = (By.XPATH, "//*[@title='Faded Short Sleeve T-shirts'][1]")
-    FADED_SHORT_SLEEVE_TSHIRT_QUICK_VIEW_BUTTON = (By.XPATH, "//span[text()='Quick view']")
-    FADED_SHORT_SLEEVE_TSHIRT_ADD_TO_CART_BUTTON = (By.XPATH, "//span[text()='Add to cart']")
-    FADED_SHORT_SLEEVE_TSHIRT_MORE_BUTTON = (By.XPATH, "//span[text()='More']")
-
     def __init__(self, driver):
         self.driver = driver
 
     def click_tshirts_nav_menu_button(self):
-        self.driver.find_element(*self.TSHIRTS_NAV_MENU_BUTTON).click()
+        tshirts_nav_menu = \
+            Button(self.driver, xpath="//*[@id='block_top_menu']/ul/li[3]/a")
+        tshirts_nav_menu.click()
 
-    def click_tshirts_size_small_checkbox(self):
-        self.driver.find_element(*self.TSHIRTS_SIZE_SMALL_CHECKBOX).click()
+    def check_tshirts_size_small_checkbox(self):
+        check_tshirts_size_small = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_1")
+        check_tshirts_size_small.check()
 
-    def click_tshirts_size_medium_checkbox(self):
-        self.driver.find_element(*self.TSHIRTS_SIZE_MEDIUM_CHECKBOX).click()
+    def uncheck_tshirts_size_small_checkbox(self):
+        uncheck_tshirts_size_small = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_1")
+        uncheck_tshirts_size_small.uncheck()
 
-    def click_tshirts_size_large_checkbox(self):
-        self.driver.find_element(*self.TSHIRTS_SIZE_LARGE_CHECKBOX).click()
+    def check_tshirts_size_medium_checkbox(self):
+        check_tshirts_size_medium = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_2")
+        check_tshirts_size_medium.check()
 
-    def click_tshirts_color_orange_checkbox(self):
-        self.driver.find_element(*self.TSHIRTS_COLOR_ORANGE_CHECKBOX).click()
+    def uncheck_tshirts_size_medium_checkbox(self):
+        uncheck_tshirts_size_medium = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_2")
+        uncheck_tshirts_size_medium.uncheck()
 
-    def click_tshirts_color_blue_checkbox(self):
-        self.driver.find_element(*self.TSHIRTS_COLOR_BLUE_CHECKBOX).click()
+    def check_tshirts_size_large_checkbox(self):
+        check_tshirts_size_large = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_3")
+        check_tshirts_size_large.check()
 
-    def click_tshirts_compositions_cotton_checkbox(self):
-        self.driver.find_element(*self.TSHIRTS_COMPOSITIONS_COTTON_CHECKBOX).click()
+    def uncheck_tshirts_size_large_checkbox(self):
+        uncheck_tshirts_size_large = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_3")
+        uncheck_tshirts_size_large.uncheck()
 
-    def click_tshirts_styles_casual_checkbox(self):
-        self.driver.find_element(*self.TSHIRTS_STYLES_CASUAL_CHECKBOX).click()
+    def check_tshirts_color_orange_checkbox(self):
+        check_shirts_color_orange = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_13")
+        check_shirts_color_orange.check()
 
-    def click_tshirts_properties_short_sleeve_checkbox(self):
-        self.driver.find_element(*self.TSHIRTS_PROPERTIES_SHORT_SLEEVE_CHECKBOX).click()
+    def uncheck_tshirts_color_orange_checkbox(self):
+        uncheck_shirts_color_orange = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_13")
+        uncheck_shirts_color_orange.uncheck()
 
-    def click_tshirts_availability_in_stock_checkbox(self):
-        self.driver.find_element(*self.TSHIRTS_AVAILABILITY_IN_STOCK_CHECKBOX).click()
+    def check_tshirts_color_blue_checkbox(self):
+        check_tshirts_color_blue = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_14")
+        check_tshirts_color_blue.check()
 
-    def click_tshirts_manufacturer_fashion_manufacturer_checkbox(self):
-        self.driver.find_element(*self.TSHIRTS_MANUFACTURER_FASHION_MANUFACTURER_CHECKBOX).click()
+    def uncheck_tshirts_color_blue_checkbox(self):
+        uncheck_tshirts_color_blue = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_14")
+        uncheck_tshirts_color_blue.uncheck()
 
-    def click_tshirts_condition_new_checkbox(self):
-        self.driver.find_element(*self.TSHIRTS_CONDITION_NEW_CHECKBOX).click()
+    def check_tshirts_compositions_cotton_checkbox(self):
+        check_tshirts_compositions_cotton = \
+            CheckBox(self.driver, div_id="layered_id_feature_5")
+        check_tshirts_compositions_cotton.check()
+
+    def uncheck_tshirts_compositions_cotton_checkbox(self):
+        uncheck_tshirts_compositions_cotton = \
+            CheckBox(self.driver, div_id="layered_id_feature_5")
+        uncheck_tshirts_compositions_cotton.uncheck()
+
+    def check_tshirts_styles_casual_checkbox(self):
+        check_tshirts_styles_casual = \
+            CheckBox(self.driver, div_id="layered_id_feature_11")
+        check_tshirts_styles_casual.check()
+
+    def uncheck_tshirts_styles_casual_checkbox(self):
+        uncheck_tshirts_styles_casual = \
+            CheckBox(self.driver, div_id="layered_id_feature_11")
+        uncheck_tshirts_styles_casual.uncheck()
+
+    def check_tshirts_properties_short_sleeve_checkbox(self):
+        check_tshirts_properties_short_sleeve = \
+            CheckBox(self.driver, div_id="layered_id_feature_17")
+        check_tshirts_properties_short_sleeve.check()
+
+    def uncheck_tshirts_properties_short_sleeve_checkbox(self):
+        uncheck_tshirts_properties_short_sleeve = \
+            CheckBox(self.driver, div_id="layered_id_feature_17")
+        uncheck_tshirts_properties_short_sleeve.uncheck()
+
+    def check_tshirts_availability_in_stock_checkbox(self):
+        check_tshirts_availability_in_stock = \
+            CheckBox(self.driver, div_id="layered_quantity_1")
+        check_tshirts_availability_in_stock.check()
+
+    def uncheck_tshirts_availability_in_stock_checkbox(self):
+        uncheck_tshirts_availability_in_stock = \
+            CheckBox(self.driver, div_id="layered_quantity_1")
+        uncheck_tshirts_availability_in_stock.uncheck()
+
+    def check_tshirts_manufacturer_fashion_manufacturer_checkbox(self):
+        check_tshirts_manufacturer_fashion = \
+            CheckBox(self.driver, div_id="layered_manufacturer_1")
+        check_tshirts_manufacturer_fashion.check()
+
+    def uncheck_tshirts_manufacturer_fashion_manufacturer_checkbox(self):
+        uncheck_tshirts_manufacturer_fashion = \
+            CheckBox(self.driver, div_id="layered_manufacturer_1")
+        uncheck_tshirts_manufacturer_fashion.uncheck()
+
+    def check_tshirts_condition_new_checkbox(self):
+        check_tshirts_condition_new = \
+            CheckBox(self.driver, div_id="layered_condition_new")
+        check_tshirts_condition_new.check()
+
+    def uncheck_tshirts_condition_new_checkbox(self):
+        uncheck_tshirts_condition_new = \
+            CheckBox(self.driver, div_id="layered_condition_new")
+        uncheck_tshirts_condition_new.uncheck()
 
     def click_tshirts_information_delivery_link(self):
-        self.driver.find_element(*self.TSHIRTS_INFORMATION_DELIVERY_LINK).click()
+        tshirts_information_delivery = \
+            Link(self.driver, xpath="//*[@title='Delivery']")
+        tshirts_information_delivery.click()
 
     def click_tshirts_legal_notice_link(self):
-        self.driver.find_element(*self.TSHIRTS_INFORMATION_LEGAL_NOTICE_LINK).click()
+        tshirts_legal_notice = \
+            Link(self.driver, xpath="//*[@title='Legal Notice']")
+        tshirts_legal_notice.click()
 
     def click_tshirts_terms_and_condition_of_use_link(self):
-        self.driver.find_element(*self.TSHIRTS_INFORMATION_TERMS_AND_CONDITION_OF_USE_LINK).click()
+        tshirts_terms_and_conditions_of_use = \
+            Link(self.driver,
+                 xpath="//*[@title='Terms and conditions of use']")
+        tshirts_terms_and_conditions_of_use.click()
 
     def click_tshirts_about_us_link(self):
-        self.driver.find_element(*self.TSHIRTS_INFORMATION_ABOUT_US_LINK).click()
+        tshirts_about_us = Link(self.driver, xpath="//*[@title='About us']")
+        tshirts_about_us.click()
 
     def click_tshirts_secure_payment_link(self):
-        self.driver.find_element(*self.TSHIRTS_INFORMATION_SECURE_PAYMENT_LINK).click()
+        tshirts_secure_payment = \
+            Link(self.driver, xpath="//*[@title='Secure payment']")
+        tshirts_secure_payment.click()
 
     def click_tshirts_our_stores_link(self):
-        self.driver.find_element(*self.TSHIRTS_INFORMATION_OUR_STORES_LINK).click()
+        tshirts_our_stores = \
+            Link(self.driver, xpath="//*[@title='Our stores']")
+        tshirts_our_stores.click()
 
     def click_tshirts_all_specials_button(self):
-        self.driver.find_element(*self.TSHIRTS_ALL_SPECIALS_BUTTON).click()
+        tshirts_all_specials = \
+            Button(self.driver, xpath="//span[text()='All specials']")
+        tshirts_all_specials.click()
 
     def click_tshirts_discover_our_stores_button(self):
-        self.driver.find_element(*self.TSHIRTS_DISCOVER_OUR_STORES_BUTTON).click()
+        tshirts_discover_our_stores = \
+            Button(self.driver, xpath="//span[text()='Discover our stores']")
+        tshirts_discover_our_stores.click()
 
     def select_tshirts_sort_by_dropdown(self, value):
-        dropdown = Select(self.driver.find_element(*self.TSHIRTS_SORT_BY_DROPDOWN))
-        dropdown.select_by_visible_text(value)
+        tshirts_sort_by = DropDown(self.driver, div_id="selectProductSort")
+        tshirts_sort_by.select_dropdown(value)
 
     def click_tshirts_view_grid_button(self):
-        self.driver.find_element(*self.TSHIRTS_VIEW_GRID_BUTTON).click()
+        tshirts_view_grid = Button(self.driver, xpath="//*[@id='grid']/a/i")
+        tshirts_view_grid.click()
 
     def click_tshirts_list_grid_button(self):
-        self.driver.find_element(*self.TSHIRTS_VIEW_LIST_BUTTON).click()
+        tshirts_list_grid = Button(self.driver, xpath="//*[@id='list']/a/i")
+        tshirts_list_grid.click()
 
     def click_faded_short_sleeve_tshirts_thumbnail(self):
-        self.driver.find_element(*self.FADED_SHORT_SLEEVE_TSHIRT_THUMBNAIL).click()
+        faded_short_sleeve_tshirts = \
+            Link(self.driver,
+                 xpath="//*[@title='Faded Short Sleeve T-shirts'][1]")
+        faded_short_sleeve_tshirts.click()
 
     def click_printed_chiffon_dress_quick_view_button(self):
-        button = self.driver.find_element(*self.FADED_SHORT_SLEEVE_TSHIRT_QUICK_VIEW_BUTTON)
-        thumbnail = self.driver.find_element(*self.FADED_SHORT_SLEEVE_TSHIRT_THUMBNAIL)
-        hover = ActionChains(self.driver).move_to_element(button).move_to_element(thumbnail)
+        button = \
+            self.driver.find_element_by_xpath("//span[text()='Quick view']")
+        thumbnail = \
+            self.driver.\
+            find_element_by_xpath("//*[@title='Faded Short Sleeve T-shirts'][1]")
+        hover = \
+            ActionChains(self.driver).move_to_element(button).\
+            move_to_element(thumbnail)
         hover.click().perform()
-
-
-
-

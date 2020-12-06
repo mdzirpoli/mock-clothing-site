@@ -27,48 +27,93 @@ class TShirtPageTests(unittest.TestCase):
         self.driver.close()
 
     @unittest.skip("pass")
-    def test_click_tshirts_size_small_checkbox(self):
-        self.tshirts.click_tshirts_size_small_checkbox()
+    def test_check_tshirts_size_small_checkbox(self):
+        self.tshirts.check_tshirts_size_small_checkbox()
 
     @unittest.skip("pass")
-    def test_click_tshirts_size_medium_checkbox(self):
-        self.tshirts.click_tshirts_size_medium_checkbox()
+    def test_uncheck_tshirts_size_small_checkbox(self):
+        self.tshirts.uncheck_tshirts_size_small_checkbox()
 
     @unittest.skip("pass")
-    def test_click_tshirts_size_large_checkbox(self):
-        self.tshirts.click_tshirts_size_large_checkbox()
+    def test_check_tshirts_size_medium_checkbox(self):
+        self.tshirts.check_tshirts_size_medium_checkbox()
 
     @unittest.skip("pass")
-    def test_click_tshirts_color_orange_checkbox(self):
-        self.tshirts.click_tshirts_color_orange_checkbox()
+    def test_uncheck_tshirts_size_medium_checkbox(self):
+        self.tshirts.uncheck_tshirts_size_medium_checkbox()
 
     @unittest.skip("pass")
-    def test_click_tshirts_color_blue_checkbox(self):
-        self.tshirts.click_tshirts_color_blue_checkbox()
+    def test_check_tshirts_size_large_checkbox(self):
+        self.tshirts.check_tshirts_size_large_checkbox()
 
     @unittest.skip("pass")
-    def test_click_tshirts_compositions_cotton_checkbox(self):
-        self.tshirts.click_tshirts_compositions_cotton_checkbox()
+    def test_uncheck_tshirts_size_large_checkbox(self):
+        self.tshirts.uncheck_tshirts_size_large_checkbox()
 
     @unittest.skip("pass")
-    def test_click_tshirts_styles_casual_checkbox(self):
-        self.tshirts.click_tshirts_styles_casual_checkbox()
+    def test_check_tshirts_color_orange_checkbox(self):
+        self.tshirts.check_tshirts_color_orange_checkbox()
 
     @unittest.skip("pass")
-    def test_click_tshirts_properties_short_sleeve_checkbox(self):
-        self.tshirts.click_tshirts_properties_short_sleeve_checkbox()
+    def test_uncheck_tshirts_color_orange_checkbox(self):
+        self.tshirts.uncheck_tshirts_color_orange_checkbox()
 
     @unittest.skip("pass")
-    def test_click_tshirts_availability_in_stock_checkbox(self):
-        self.tshirts.click_tshirts_availability_in_stock_checkbox()
+    def test_check_tshirts_color_blue_checkbox(self):
+        self.tshirts.check_tshirts_color_blue_checkbox()
 
     @unittest.skip("pass")
-    def test_click_tshirts_manufacturer_fashion_manufacturer_checkbox(self):
-        self.tshirts.click_tshirts_manufacturer_fashion_manufacturer_checkbox()
+    def test_uncheck_tshirts_color_blue_checkbox(self):
+        self.tshirts.uncheck_tshirts_color_blue_checkbox()
 
     @unittest.skip("pass")
-    def test_click_tshirts_condition_new_checkbox(self):
-        self.tshirts.click_tshirts_condition_new_checkbox()
+    def test_check_tshirts_compositions_cotton_checkbox(self):
+        self.tshirts.check_tshirts_compositions_cotton_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_tshirts_compositions_cotton_checkbox(self):
+        self.tshirts.uncheck_tshirts_compositions_cotton_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_tshirts_styles_casual_checkbox(self):
+        self.tshirts.check_tshirts_styles_casual_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_tshirts_styles_casual_checkbox(self):
+        self.tshirts.uncheck_tshirts_styles_casual_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_tshirts_properties_short_sleeve_checkbox(self):
+        self.tshirts.check_tshirts_properties_short_sleeve_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_tshirts_properties_short_sleeve_checkbox(self):
+        self.tshirts.uncheck_tshirts_properties_short_sleeve_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_tshirts_availability_in_stock_checkbox(self):
+        self.tshirts.check_tshirts_availability_in_stock_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_tshirts_availability_in_stock_checkbox(self):
+        self.tshirts.uncheck_tshirts_availability_in_stock_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_tshirts_manufacturer_fashion_manufacturer_checkbox(self):
+        self.tshirts.check_tshirts_manufacturer_fashion_manufacturer_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_tshirts_manufacturer_fashion_manufacturer_checkbox(self):
+        self.tshirts.\
+            uncheck_tshirts_manufacturer_fashion_manufacturer_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_tshirts_condition_new_checkbox(self):
+        self.tshirts.check_tshirts_condition_new_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_tshirts_condition_new_checkbox(self):
+        self.tshirts.uncheck_tshirts_condition_new_checkbox()
 
     @unittest.skip("pass")
     def test_click_tshirts_information_delivery_link(self):
