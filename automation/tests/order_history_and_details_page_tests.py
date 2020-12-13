@@ -1,5 +1,6 @@
 """
 Created on April 4, 2020
+Modified on December 13, 2020
 
 @author: Mark Zirpoli
 
@@ -48,25 +49,29 @@ class OrderHistoryAndDetailsPageTests(unittest.TestCase):
     def test_click_order_history_order_reference_download_your_invoice_as_pdf(self):
         self.order_history.click_order_history_order_reference_link()
         time.sleep(2)
-        self.order_history.click_order_history_order_reference_download_your_invoice_as_pdf()
+        self.order_history.\
+            click_order_history_order_reference_download_your_invoice_as_pdf()
 
     @unittest.skip("pass")
     def test_select_order_history_order_reference_product_message_dropdown(self):
         self.order_history.click_order_history_order_reference_link()
         time.sleep(2)
-        self.order_history.select_order_history_order_reference_product_message_dropdown("Blouse - Color : Black, Size : S")
+        self.order_history.\
+            select_order_history_order_reference_product_message_dropdown("Blouse - Color : Black, Size : S")
 
     @unittest.skip("pass")
     def test_input_order_history_order_reference_product_message_textbox(self):
         self.order_history.click_order_history_order_reference_link()
         time.sleep(2)
-        self.order_history.input_order_history_order_reference_product_message_textbox("Product text for this field")
+        self.order_history.\
+            input_order_history_order_reference_product_message_textbox("Product text for this field")
 
     @unittest.skip("pass")
     def test_click_order_history_order_reference_product_message_send_button(self):
         self.order_history.click_order_history_order_reference_link()
         time.sleep(2)
-        self.order_history.click_order_history_order_reference_product_message_send_button()
+        self.order_history.\
+            click_order_history_order_reference_product_message_send_button()
 
     @unittest.skip("pass")
     def test_click_order_history_invoice_pdf_link(self):
