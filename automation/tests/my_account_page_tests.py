@@ -6,8 +6,8 @@ Created on February 16, 2020
 This module contains the unit tests for My Account page
 """
 
-from pages.sign_in_page import SignInPage
-from pages.my_account_page import MyAccountPage
+from automation.pages.sign_in_page import SignInPage
+from automation.pages.my_account_page import MyAccountPage
 from selenium import webdriver
 import unittest
 import time

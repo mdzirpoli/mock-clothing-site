@@ -5,6 +5,7 @@ Created on March 14, 2020
 
 This module contains methods for the Checkout Payment page
 """
+
 from selenium.webdriver.common.by import By
 
 

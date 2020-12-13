@@ -5,6 +5,7 @@ Created on February 16, 2020
 
 This module contains methods for My Account page
 """
+
 from selenium.webdriver.common.by import By
 
 

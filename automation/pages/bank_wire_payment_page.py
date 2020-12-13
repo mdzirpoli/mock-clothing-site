@@ -6,6 +6,7 @@ Modified on December 5, 2020
 
 This module contains methods for the Bank Wire Payment page
 """
+
 from automation.elements import Button, Link
 
 

@@ -5,6 +5,7 @@ Created on February 29, 2020
 
 This module contains methods for the Checkout Summary page
 """
+
 from selenium.webdriver.common.by import By
 
 

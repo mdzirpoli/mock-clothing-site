@@ -6,6 +6,7 @@ Modified on November 29, 2020
 
 This module contains methods for the Sign In page
 """
+
 from automation.elements import Button, TextField
 
 

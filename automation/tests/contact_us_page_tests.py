@@ -6,7 +6,7 @@ Created on November 24, 2019
 This module contains the unit tests for the Contact Us page
 """
 
-from pages.contact_us_page import ContactUsPage
+from automation.pages.contact_us_page import ContactUsPage
 from selenium import webdriver
 import unittest
 import time

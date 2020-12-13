@@ -85,6 +85,7 @@ class TextField(Element):
 
     def input_text(self, text: str):
         try:
+            self.element.clear()
             self.element.send_keys(text)
         except Exception as e:
             print(e)
