@@ -1,40 +1,45 @@
 """
 Created on February 16, 2020
+Modified on December 18, 2020
 
 @author: Mark Zirpoli
 
 This module contains methods for My Account page
 """
 
-from selenium.webdriver.common.by import By
+from automation.elements import Button
 
 
 class MyAccountPage(object):
     """
     Page object for My Account page
     """
-
-    # My Account page locators
-    ORDER_HISTORY_AND_DETAILS_BUTTON = (By.XPATH, "//span[text()='Order history and details']")
-    MY_WISHLISTS_BUTTON = (By.XPATH, "//span[text()='My wishlists']")
-    MY_CREDIT_SLIPS_BUTTON = (By.XPATH, "//span[text()='My credit slips']")
-    MY_ADDRESSES_BUTTON = (By.XPATH, "//span[text()='My addresses']")
-    MY_PERSONAL_INFORMATION_BUTTON = (By.XPATH, "//span[text()='My personal information']")
-
     def __init__(self, driver):
         self.driver = driver
 
     def click_order_history_and_details_button(self):
-        self.driver.find_element(*self.ORDER_HISTORY_AND_DETAILS_BUTTON).click()
+        order_history_and_details = \
+            Button(self.driver,
+                   xpath="//span[text()='Order history and details']")
+        order_history_and_details.click()
 
     def click_my_wishlists_button(self):
-        self.driver.find_element(*self.MY_WISHLISTS_BUTTON).click()
+        my_wishlists = Button(self.driver,
+                              xpath="//span[text()='My wishlists']")
+        my_wishlists.click()
 
     def click_my_credit_slips_button(self):
-        self.driver.find_element(*self.MY_CREDIT_SLIPS_BUTTON).click()
+        my_credit_slips = Button(self.driver,
+                                 xpath="//span[text()='My credit slips']")
+        my_credit_slips.click()
 
     def click_my_addresses_button(self):
-        self.driver.find_element(*self.MY_ADDRESSES_BUTTON).click()
+        my_addresses = Button(self.driver,
+                              xpath="//span[text()='My addresses']")
+        my_addresses.click()
 
     def click_my_personal_information_button(self):
-        self.driver.find_element(*self.MY_PERSONAL_INFORMATION_BUTTON).click()
+        my_personal_information = \
+            Button(self.driver,
+                   xpath="//span[text()='My personal information']")
+        my_personal_information.click()
