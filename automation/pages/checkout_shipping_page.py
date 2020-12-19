@@ -1,36 +1,44 @@
 """
 Created on March 14, 2020
+Modified on December 19, 2020
 
 @author: Mark Zirpoli
 
 This module contains methods for the Checkout Shipping page
 """
 
-from selenium.webdriver.common.by import By
+from automation.elements import Button, Link, CheckBox
 
 
 class CheckoutShippingPage(object):
     """
     Page object for Checkout Shipping page
     """
-
-    # Checkout Shipping page locators
-    CHECKOUT_SHIPPING_TERMS_OF_SERVICE_CHECKBOX = (By.ID, "cgv")
-    CHECKOUT_SHIPPING_READ_THE_TERMS_OF_SERVICE_LINK = (By.XPATH, "//*[contains(text(), 'Read the Terms of Service')]")
-    CHECKOUT_SHIPPING_CONTINUE_SHOPPING_LINK = (By.XPATH, "//*[@title='Previous']")
-    CHECKOUT_SHIPPING_PROCEED_TO_CHECKOUT_BUTTON = (By.XPATH, "//*[@id='form']/p/button/span")
-
     def __init__(self, driver):
         self.driver = driver
 
-    def click_checkout_shipping_terms_of_service_checkbox(self):
-        self.driver.find_element(*self.CHECKOUT_SHIPPING_TERMS_OF_SERVICE_CHECKBOX).click()
+    def check_checkout_shipping_terms_of_service_checkbox(self):
+        checkout_shipping_terms_of_service = CheckBox(self.driver,
+                                                      div_id="cgv")
+        checkout_shipping_terms_of_service.check()
+
+    def uncheck_checkout_shipping_terms_of_service_checkbox(self):
+        checkout_shipping_terms_of_service = CheckBox(self.driver,
+                                                      div_id="cgv")
+        checkout_shipping_terms_of_service.uncheck()
 
     def click_checkout_shipping_read_the_terms_of_service_link(self):
-        self.driver.find_element(*self.CHECKOUT_SHIPPING_READ_THE_TERMS_OF_SERVICE_LINK).click()
+        checkout_shipping_read_the_terms_of_service = \
+            Link(self.driver,
+                 xpath="//*[contains(text(), 'Read the Terms of Service')]")
+        checkout_shipping_read_the_terms_of_service.click()
 
     def click_checkout_shipping_continue_shopping_link(self):
-        self.driver.find_element(*self.CHECKOUT_SHIPPING_CONTINUE_SHOPPING_LINK).click()
+        checkout_shipping_continue_shopping = \
+            Link(self.driver, xpath="//*[@title='Previous']")
+        checkout_shipping_continue_shopping.click()
 
     def click_checkout_shipping_proceed_to_checkout_button(self):
-        self.driver.find_element(*self.CHECKOUT_SHIPPING_PROCEED_TO_CHECKOUT_BUTTON).click()
+        checkout_shipping_proceed_to_checkout = \
+            Button(self.driver, xpath="//*[@id='form']/p/button/span")
+        checkout_shipping_proceed_to_checkout.click()

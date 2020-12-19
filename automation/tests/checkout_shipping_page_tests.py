@@ -1,5 +1,6 @@
 """
 Created on March 14, 2020
+Modified on December 19, 2020
 
 @author: Mark Zirpoli
 
@@ -49,9 +50,14 @@ class CheckoutShippingPageTests(unittest.TestCase):
         self.driver.close()
 
     @unittest.skip("pass")
-    def test_click_checkout_shipping_terms_of_service_checkbox(self):
+    def test_check_checkout_shipping_terms_of_service_checkbox(self):
         time.sleep(2)
-        self.shipping.click_checkout_shipping_terms_of_service_checkbox()
+        self.shipping.check_checkout_shipping_terms_of_service_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_checkout_shipping_terms_of_service_checkbox(self):
+        time.sleep(2)
+        self.shipping.uncheck_checkout_shipping_terms_of_service_checkbox()
 
     @unittest.skip("pass")
     def test_click_checkout_shipping_read_the_terms_of_service(self):
