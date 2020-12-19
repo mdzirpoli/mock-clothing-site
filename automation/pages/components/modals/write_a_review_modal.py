@@ -1,48 +1,53 @@
 """
 Created on February 15, 2020
+Modified on December 19, 2020
 
 @author: Mark Zirpoli
 
 This module contains methods for Write A Review Modal
 """
 
-from selenium.webdriver.common.by import By
+from automation.elements import Button, TextField, Link
 
 
 class WriteAReviewModal(object):
     """
     Page object for Write A Review Modal
     """
-
-    # Write A Review Modal locators
-    WRITE_A_REVIEW_LINK = (By.XPATH, "//*[@id='product_comments_block_extra']/ul/li/a")
-    QUALITY_STARS = (By.XPATH, "//*[@title='4']")
-    WRITE_A_REVIEW_TITLE_TEXTBOX = (By.ID, "comment_title")
-    WRITE_A_REVIEW_COMMENT_TEXTBOX = (By.ID, "content")
-    WRITE_A_REVIEW_SEND_BUTTON = (By.XPATH, "//*[@id='submitNewMessage']")
-    WRITE_A_REVIEW_CANCEL_BUTTON = (By.XPATH, "//*[@id='new_comment_form_footer']/p[2]/a")
-    WRITE_A_REVIEW_X_BUTTON = (By.XPATH, "//*[@id='product']/div[2]/div/div/a")
-
     def __init__(self, driver):
         self.driver = driver
 
     def click_write_a_review_link(self):
-        self.driver.find_element(*self.WRITE_A_REVIEW_LINK).click()
+        write_a_review = \
+            Link(self.driver,
+                 xpath="//*[@id='product_comments_block_extra']/ul/li/a")
+        write_a_review.click()
 
     def click_stars_rating(self):
-        self.driver.find_element(*self.QUALITY_STARS).click()
+        stars_rating = Link(self.driver, xpath="//*[@title='4']")
+        stars_rating.click()
 
     def input_write_a_review_title_textbox(self, review):
-        self.driver.find_element(*self.WRITE_A_REVIEW_TITLE_TEXTBOX).send_keys(review)
+        write_a_review_title = TextField(self.driver, div_id="comment_title")
+        write_a_review_title.input_text(review)
 
     def input_write_a_review_comment_textbox(self, comment):
-        self.driver.find_element(*self.WRITE_A_REVIEW_COMMENT_TEXTBOX).send_keys(comment)
+        write_a_review_comment = TextField(self.driver, div_id="content")
+        write_a_review_comment.input_text(comment)
 
     def click_write_a_review_send_button(self):
-        self.driver.find_element(*self.WRITE_A_REVIEW_SEND_BUTTON).click()
+        write_a_review_send = Button(self.driver,
+                                     xpath="//*[@id='submitNewMessage']")
+        write_a_review_send.click()
 
     def click_write_a_review_cancel_button(self):
-        self.driver.find_element(*self.WRITE_A_REVIEW_CANCEL_BUTTON).click()
+        write_a_review_cancel = \
+            Button(self.driver,
+                   xpath="//*[@id='new_comment_form_footer']/p[2]/a")
+        write_a_review_cancel.click()
 
     def click_write_a_review_x_button(self):
-        self.driver.find_element(*self.WRITE_A_REVIEW_X_BUTTON).click()
+        write_a_review_x = \
+            Button(self.driver,
+                   xpath="//*[@id='product']/div[2]/div/div/a")
+        write_a_review_x.click()
