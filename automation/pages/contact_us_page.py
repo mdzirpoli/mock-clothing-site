@@ -1,50 +1,47 @@
 """
 Created on November 24, 2019
+Modified on December 19, 2020
 
 @author: Mark Zirpoli
 
 This module contains methods for the Contact Us page
 """
 
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select
+from automation.elements import Button, TextField, DropDown
 
 
 class ContactUsPage(object):
     """
     Page object for Contact Us page
     """
-
-    # Contact Us page locators
-    CONTACT_US_MENU_BUTTON = (By.XPATH, "//*[@id='contact-link']/a")
-    SUBJECT_HEADING_DROPDOWN = (By.ID, "id_contact")
-    CONTACT_US_EMAIL_ADDRESS_TEXTBOX = (By.ID, "email")
-    ORDER_REFERENCE_TEXTBOX = (By.ID, "id_order")
-    ATTACH_FILE_UPLOAD_BUTTON = (By.ID, "fileUpload")
-    CONTACT_US_MESSAGE_TEXTBOX = (By.ID, "message")
-    CONTACT_US_SEND_BUTTON = (By.ID, "submitMessage")
-
     def __init__(self, driver):
         self.driver = driver
 
     def click_contact_us_menu_button(self):
-        self.driver.find_element(*self.CONTACT_US_MENU_BUTTON).click()
+        contact_us_menu = Button(self.driver,
+                                 xpath="//*[@id='contact-link']/a")
+        contact_us_menu.click()
 
     def click_subject_heading_dropdown(self, value):
-        dropdown = Select(self.driver.find_element(*self.SUBJECT_HEADING_DROPDOWN))
-        dropdown.select_by_visible_text(value)
+        subject_header = DropDown(self.driver, div_id="id_contact")
+        subject_header.select_dropdown(value)
 
     def input_contact_us_email_address_textbox(self, email):
-        self.driver.find_element(*self.CONTACT_US_EMAIL_ADDRESS_TEXTBOX).send_keys(email)
+        contact_us_email_address = TextField(self.driver, div_id="email")
+        contact_us_email_address.input_text(email)
 
     def input_order_reference_textbox(self, order):
-        self.driver.find_element(*self.ORDER_REFERENCE_TEXTBOX).send_keys(order)
+        order_reference = TextField(self.driver, div_id="id_order")
+        order_reference.input_text(order)
 
     def attach_file_upload(self, path):
-        self.driver.find_element(*self.ATTACH_FILE_UPLOAD_BUTTON).send_keys(path)
+        attach_file = TextField(self.driver, div_id="fileUpload")
+        attach_file.input_text(path)
 
     def input_contact_us_message_textbox(self, message):
-        self.driver.find_element(*self.CONTACT_US_MESSAGE_TEXTBOX).send_keys(message)
+        contact_us_message = TextField(self.driver, div_id="message")
+        contact_us_message.input_text(message)
 
     def click_contact_us_send_button(self):
-        self.driver.find_element(*self.CONTACT_US_SEND_BUTTON).click()
+        contact_us = Button(self.driver, div_id="submitMessage")
+        contact_us.click()
