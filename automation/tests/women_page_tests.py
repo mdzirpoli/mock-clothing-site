@@ -1,5 +1,6 @@
 """
 Created on December 1, 2019
+Modified on December 21, 2020
 
 @author: Mark Zirpoli
 
@@ -35,112 +36,220 @@ class WomenPageTests(unittest.TestCase):
         self.women.click_women_dresses_link()
 
     @unittest.skip("pass")
-    def test_select_categories_tops_checkbox(self):
-        self.women.select_categories_tops_checkbox()
+    def test_check_categories_tops_checkbox(self):
+        self.women.check_categories_tops_checkbox()
 
     @unittest.skip("pass")
-    def test_select_categories_dresses_checkbox(self):
-        self.women.select_categories_dresses_checkbox()
+    def test_uncheck_categories_tops_checkbox(self):
+        self.women.uncheck_categories_tops_checkbox()
 
     @unittest.skip("pass")
-    def test_select_size_small_checkbox(self):
-        self.women.select_size_small_checkbox()
+    def test_check_categories_dresses_checkbox(self):
+        self.women.check_categories_dresses_checkbox()
 
     @unittest.skip("pass")
-    def test_select_size_medium_checkbox(self):
-        self.women.select_size_medium_checkbox()
+    def test_uncheck_categories_dresses_checkbox(self):
+        self.women.uncheck_categories_dresses_checkbox()
 
     @unittest.skip("pass")
-    def test_select_size_large_checkbox(self):
-        self.women.select_size_large_checkbox()
+    def test_check_size_small_checkbox(self):
+        self.women.check_size_small_checkbox()
 
     @unittest.skip("pass")
-    def test_select_color_beige_checkbox(self):
-        self.women.select_color_beige_checkbox()
+    def test_uncheck_size_small_checkbox(self):
+        self.women.uncheck_size_small_checkbox()
 
     @unittest.skip("pass")
-    def test_select_color_white_checkbox(self):
-        self.women.select_color_white_checkbox()
+    def test_check_size_medium_checkbox(self):
+        self.women.check_size_medium_checkbox()
 
     @unittest.skip("pass")
-    def test_select_color_black_checkbox(self):
-        self.women.select_color_black_checkbox()
+    def test_uncheck_size_medium_checkbox(self):
+        self.women.uncheck_size_medium_checkbox()
 
     @unittest.skip("pass")
-    def test_select_color_orange_checkbox(self):
-        self.women.select_color_orange_checkbox()
+    def test_check_size_large_checkbox(self):
+        self.women.check_size_large_checkbox()
 
     @unittest.skip("pass")
-    def test_select_color_blue_checkbox(self):
-        self.women.select_color_blue_checkbox()
+    def test_uncheck_size_large_checkbox(self):
+        self.women.uncheck_size_large_checkbox()
 
     @unittest.skip("pass")
-    def test_select_color_green_checkbox(self):
-        self.women.select_color_green_checkbox()
+    def test_check_color_beige_checkbox(self):
+        self.women.check_color_beige_checkbox()
 
     @unittest.skip("pass")
-    def test_select_color_yellow_checkbox(self):
-        self.women.select_color_yellow_checkbox()
+    def test_uncheck_color_beige_checkbox(self):
+        self.women.uncheck_color_beige_checkbox()
 
     @unittest.skip("pass")
-    def test_select_color_pink_checkbox(self):
-        self.women.select_color_pink_checkbox()
+    def test_check_color_white_checkbox(self):
+        self.women.check_color_white_checkbox()
 
     @unittest.skip("pass")
-    def test_select_compositions_cotton_checkbox(self):
-        self.women.select_compositions_cotton_checkbox()
+    def test_uncheck_color_white_checkbox(self):
+        self.women.uncheck_color_white_checkbox()
 
     @unittest.skip("pass")
-    def test_select_compositions_polyester_checkbox(self):
-        self.women.select_compositions_polyester_checkbox()
+    def test_check_color_black_checkbox(self):
+        self.women.check_color_black_checkbox()
 
     @unittest.skip("pass")
-    def test_select_compositions_viscose_checkbox(self):
-        self.women.select_compositions_viscose_checkbox()
+    def test_uncheck_color_black_checkbox(self):
+        self.women.uncheck_color_black_checkbox()
 
     @unittest.skip("pass")
-    def test_select_styles_casual_checkbox(self):
-        self.women.select_styles_casual_checkbox()
+    def test_check_color_orange_checkbox(self):
+        self.women.check_color_orange_checkbox()
 
     @unittest.skip("pass")
-    def test_select_styles_dressy_checkbox(self):
-        self.women.select_styles_dressy_checkbox()
+    def test_uncheck_color_orange_checkbox(self):
+        self.women.uncheck_color_orange_checkbox()
 
     @unittest.skip("pass")
-    def test_select_styles_girly_checkbox(self):
-        self.women.select_styles_girly_checkbox()
+    def test_check_color_blue_checkbox(self):
+        self.women.check_color_blue_checkbox()
 
     @unittest.skip("pass")
-    def test_select_properties_colorful_dress_checkbox(self):
-        self.women.select_properties_colorful_dress_checkbox()
+    def test_uncheck_color_blue_checkbox(self):
+        self.women.uncheck_color_blue_checkbox()
 
     @unittest.skip("pass")
-    def test_select_properties_maxi_dress_checkbox(self):
-        self.women.select_properties_maxi_dress_checkbox()
+    def test_check_color_green_checkbox(self):
+        self.women.check_color_green_checkbox()
 
     @unittest.skip("pass")
-    def test_select_properties_midi_dress_checkbox(self):
-        self.women.select_properties_midi_dress_checkbox()
+    def test_uncheck_color_green_checkbox(self):
+        self.women.uncheck_color_green_checkbox()
 
     @unittest.skip("pass")
-    def test_select_properties_short_dress_checkbox(self):
-        self.women.select_properties_short_dress_checkbox()
+    def test_check_color_yellow_checkbox(self):
+        self.women.check_color_yellow_checkbox()
 
     @unittest.skip("pass")
-    def test_select_properties_short_sleeve_checkbox(self):
-        self.women.select_properties_short_sleeve_checkbox()
+    def test_uncheck_color_yellow_checkbox(self):
+        self.women.uncheck_color_yellow_checkbox()
 
     @unittest.skip("pass")
-    def test_select_availability_in_stock_checkbox(self):
-        self.women.select_availability_in_stock_checkbox()
+    def test_check_color_pink_checkbox(self):
+        self.women.check_color_pink_checkbox()
 
     @unittest.skip("pass")
-    def test_select_manufacturer_fashion_manufacturer_checkbox(self):
-        self.women.select_manufacturer_fashion_manufacturer_checkbox()
+    def test_uncheck_color_pink_checkbox(self):
+        self.women.uncheck_color_pink_checkbox()
 
     @unittest.skip("pass")
-    def test_select_condition_new_checkbox(self):
-        self.women.select_condition_new_checkbox()
+    def test_check_compositions_cotton_checkbox(self):
+        self.women.check_compositions_cotton_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_compositions_cotton_checkbox(self):
+        self.women.uncheck_compositions_cotton_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_compositions_polyester_checkbox(self):
+        self.women.check_compositions_polyester_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_compositions_polyester_checkbox(self):
+        self.women.uncheck_compositions_polyester_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_compositions_viscose_checkbox(self):
+        self.women.check_compositions_viscose_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_compositions_viscose_checkbox(self):
+        self.women.uncheck_compositions_viscose_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_styles_casual_checkbox(self):
+        self.women.check_styles_casual_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_styles_casual_checkbox(self):
+        self.women.uncheck_styles_casual_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_styles_dressy_checkbox(self):
+        self.women.check_styles_dressy_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_styles_dressy_checkbox(self):
+        self.women.uncheck_styles_dressy_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_styles_girly_checkbox(self):
+        self.women.check_styles_girly_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_styles_girly_checkbox(self):
+        self.women.uncheck_styles_girly_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_properties_colorful_dress_checkbox(self):
+        self.women.check_properties_colorful_dress_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_properties_colorful_dress_checkbox(self):
+        self.women.uncheck_properties_colorful_dress_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_properties_maxi_dress_checkbox(self):
+        self.women.check_properties_maxi_dress_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_properties_maxi_dress_checkbox(self):
+        self.women.uncheck_properties_maxi_dress_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_properties_midi_dress_checkbox(self):
+        self.women.check_properties_midi_dress_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_properties_midi_dress_checkbox(self):
+        self.women.uncheck_properties_midi_dress_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_properties_short_dress_checkbox(self):
+        self.women.check_properties_short_dress_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_properties_short_dress_checkbox(self):
+        self.women.uncheck_properties_short_dress_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_properties_short_sleeve_checkbox(self):
+        self.women.check_properties_short_sleeve_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_properties_short_sleeve_checkbox(self):
+        self.women.uncheck_properties_short_sleeve_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_availability_in_stock_checkbox(self):
+        self.women.check_availability_in_stock_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_availability_in_stock_checkbox(self):
+        self.women.uncheck_availability_in_stock_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_manufacturer_fashion_manufacturer_checkbox(self):
+        self.women.check_manufacturer_fashion_manufacturer_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_manufacturer_fashion_manufacturer_checkbox(self):
+        self.women.uncheck_manufacturer_fashion_manufacturer_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_condition_new_checkbox(self):
+        self.women.check_condition_new_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_condition_new_checkbox(self):
+        self.women.uncheck_condition_new_checkbox()
 
     @unittest.skip("pass")
     def test_click_information_legal_notice_link(self):
