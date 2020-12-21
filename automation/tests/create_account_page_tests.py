@@ -1,13 +1,14 @@
 """
 Created on February 4, 2020
+Modified on December 21, 2020
 
 @author: Mark Zirpoli
 
 This module contains the unit tests for the Create An Account page
 """
 
-from Pages.CreateAnAccountPage import CreateAnAccountPage
-from Pages.SignInPage import SignInPage
+from automation.pages.create_account_page import CreateAnAccountPage
+from automation.pages.sign_in_page import SignInPage
 from selenium import webdriver
 import unittest
 import time
@@ -76,14 +77,24 @@ class CreateAnAccountPageTests(unittest.TestCase):
         self.account.select_date_of_birth_year_dropdown("1985")
 
     @unittest.skip("pass")
-    def test_click_newsletter_checkbox(self):
+    def test_check_newsletter_checkbox(self):
         time.sleep(2)
-        self.account.click_newsletter_checkbox()
+        self.account.check_newsletter_checkbox()
 
     @unittest.skip("pass")
-    def test_click_special_offers_checkbox(self):
+    def test_uncheck_newsletter_checkbox(self):
         time.sleep(2)
-        self.account.click_special_offers_checkbox()
+        self.account.uncheck_newsletter_checkbox()
+
+    @unittest.skip("pass")
+    def test_check_special_offers_checkbox(self):
+        time.sleep(2)
+        self.account.check_special_offers_checkbox()
+
+    @unittest.skip("pass")
+    def test_uncheck_special_offers_checkbox(self):
+        time.sleep(2)
+        self.account.uncheck_special_offers_checkbox()
 
     @unittest.skip("pass")
     def test_input_your_address_first_name_textbox(self):
