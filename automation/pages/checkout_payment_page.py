@@ -1,32 +1,35 @@
 """
 Created on March 14, 2020
+Modified on December 21, 2020
 
 @author: Mark Zirpoli
 
 This module contains methods for the Checkout Payment page
 """
 
-from selenium.webdriver.common.by import By
+from automation.elements import Button, Link
 
 
 class CheckoutPaymentPage(object):
     """
     Page object for Checkout Payment page
     """
-
-    # Checkout Payment page locators
-    CHECKOUT_PAYMENT_PAY_BY_BANK_WIRE_BUTTON = (By.XPATH, "//*[contains(text(), 'Pay by bank wire')]")
-    CHECKOUT_PAYMENT_PAY_BY_CHECK_BUTTON = (By.XPATH, "//*[contains(text(), 'Pay by check')]")
-    CHECKOUT_PAYMENT_CONTINUE_SHOPPING_LINK = (By.XPATH, "//*[@title='Previous']")
-
     def __init__(self, driver):
         self.driver = driver
 
     def click_checkout_payment_pay_by_bank_wire_button(self):
-        self.driver.find_element(*self.CHECKOUT_PAYMENT_PAY_BY_BANK_WIRE_BUTTON).click()
+        checkout_payment_pay_by_bank_wire = \
+            Button(self.driver,
+                   xpath="//*[contains(text(), 'Pay by bank wire')]")
+        checkout_payment_pay_by_bank_wire.click()
 
     def click_checkout_payment_pay_by_check_button(self):
-        self.driver.find_element(*self.CHECKOUT_PAYMENT_PAY_BY_CHECK_BUTTON).click()
+        checkout_payment_pay_by_check = \
+            Button(self.driver,
+                   xpath="//*[contains(text(), 'Pay by check')]")
+        checkout_payment_pay_by_check.click()
 
     def click_checkout_payment_continue_shopping_link(self):
-        self.driver.find_element(*self.CHECKOUT_PAYMENT_CONTINUE_SHOPPING_LINK).click()
+        checkout_payment_continue_shopping = \
+            Link(self.driver, xpath="//*[@title='Previous']")
+        checkout_payment_continue_shopping.click()
