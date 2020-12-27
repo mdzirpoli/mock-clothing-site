@@ -1,13 +1,13 @@
 """
 Created on January 20, 2020
+Modified on December 27, 2020
 
 @author: Mark Zirpoli
 
 This module contains methods for the Dresses page
 """
 
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select
+from automation.elements import Button, DropDown, Link, CheckBox
 from selenium.webdriver import ActionChains
 
 
@@ -15,232 +15,386 @@ class DressesPage(object):
     """
     Page object for Dresses page
     """
-
-    # Dresses page navigation menu locator
-    DRESSES_NAV_MENU_BUTTON = (By.XPATH, "//*[@id='block_top_menu']/ul/li[2]/a")
-
-    # Dresses Casual, Evening and Summer Dresses locators
-    DRESSES_CASUAL_DRESSES_LINK = (By.XPATH, "//*[@id='categories_block_left']/div/ul/li[1]/a")
-    DRESSES_EVENING_DRESSES_LINK = (By.XPATH, "//*[@id='categories_block_left']/div/ul/li[2]/a")
-    DRESSES_SUMMER_DRESSES_LINK = (By.XPATH, "//*[@id='categories_block_left']/div/ul/li[3]/a")
-
-    # Categories locators
-    CATEGORIES_CASUAL_DRESSES_CHECKBOX = (By.ID, "layered_category_9")
-    CATEGORIES_EVENING_DRESSES_CHECKBOX = (By.ID, "layered_category_10")
-    CATEGORIES_SUMMER_DRESSES_CHECKBOX = (By.ID, "layered_category_11")
-
-    # Size locators
-    DRESSES_SIZE_SMALL_CHECKBOX = (By.ID, "layered_id_attribute_group_1")
-    DRESSES_SIZE_MEDIUM_CHECKBOX = (By.ID, "layered_id_attribute_group_2")
-    DRESSES_SIZE_LARGE_CHECKBOX = (By.ID, "layered_id_attribute_group_3")
-
-    # Color locators
-    DRESSES_COLOR_BEIGE_CHECKBOX = (By.ID, "layered_id_attribute_group_7")
-    DRESSES_COLOR_WHITE_CHECKBOX = (By.ID, "layered_id_attribute_group_8")
-    DRESSES_COLOR_BLACK_CHECKBOX = (By.ID, "layered_id_attribute_group_11")
-    DRESSES_COLOR_ORANGE_CHECKBOX = (By.ID, "layered_id_attribute_group_13")
-    DRESSES_COLOR_BLUE_CHECKBOX = (By.ID, "layered_id_attribute_group_14")
-    DRESSES_COLOR_GREEN_CHECKBOX = (By.ID, "layered_id_attribute_group_15")
-    DRESSES_COLOR_YELLOW_CHECKBOX = (By.ID, "layered_id_attribute_group_16")
-    DRESSES_COLOR_PINK_CHECKBOX = (By.ID, "layered_id_attribute_group_24")
-
-    # Compositions locators
-    DRESSES_COMPOSITIONS_COTTON_CHECKBOX = (By.ID, "layered_id_feature_5")
-    DRESSES_COMPOSITIONS_POLYESTER_CHECKBOX = (By.ID, "layered_id_feature_1")
-    DRESSES_COMPOSITIONS_VISCOSE_CHECKBOX = (By.ID, "layered_id_feature_3")
-
-    # Styles locators
-    DRESSES_STYLES_CASUAL_CHECKBOX = (By.ID, "layered_id_feature_11")
-    DRESSES_STYLES_DRESSY_CHECKBOX = (By.ID, "layered_id_feature_16")
-    DRESSES_STYLES_GIRLY_CHECKBOX = (By.ID, "layered_id_feature_13")
-
-    # Properties locators
-    DRESSES_PROPERTIES_COLORFUL_DRESS_CHECKBOX = (By.ID, "layered_id_feature_18")
-    DRESSES_PROPERTIES_MAXI_DRESS_CHECKBOX = (By.ID, "layered_id_feature_21")
-    DRESSES_PROPERTIES_MIDI_DRESS_CHECKBOX = (By.ID, "layered_id_feature_20")
-    DRESSES_PROPERTIES_SHORT_DRESS_CHECKBOX = (By.ID, "layered_id_feature_19")
-
-    # Availability locators
-    DRESSES_AVAILABILITY_IN_STOCK_CHECKBOX = (By.ID, "layered_quantity_1")
-
-    # Manufacturer locators
-    DRESSES_MANUFACTURER_FASHION_MANUFACTURER_CHECKBOX = (By.ID, "layered_manufacturer_1")
-
-    # Condition locators
-    DRESSES_CONDITION_NEW_CHECKBOX = (By.ID, "layered_condition_new")
-
-    # Information locators
-    DRESSES_INFORMATION_DELIVERY_LINK = (By.XPATH, "//*[@title='Delivery']")
-    DRESSES_INFORMATION_LEGAL_NOTICE_LINK = (By.XPATH, "//*[@title='Legal Notice']")
-    DRESSES_INFORMATION_TERMS_AND_CONDITION_OF_USE_LINK = (By.XPATH, "//*[@title='Terms and conditions of use']")
-    DRESSES_INFORMATION_ABOUT_US_LINK = (By.XPATH, "//*[@title='About us']")
-    DRESSES_INFORMATION_SECURE_PAYMENT_LINK = (By.XPATH, "//*[@title='Secure payment']")
-    DRESSES_INFORMATION_OUR_STORES_LINK = (By.XPATH, "//*[@title='Our stores']")
-
-    # Specials
-    DRESSES_ALL_SPECIALS_BUTTON = (By.XPATH, "//span[text()='All specials']")
-
-    # Our Stores
-    DRESSES_DISCOVER_OUR_STORES_BUTTON = (By.XPATH, "//span[text()='Discover our stores']")
-
-    # Products locators
-    SUBCATEGORIES_CASUAL_DRESSES_THUMBNAIL = (By.XPATH, "//*[@id='subcategories']/ul/li[1]/div[1]/a/img")
-    SUBCATEGORIES_EVENING_DRESSES_THUMBNAIL = (By.XPATH, "//*[@id='subcategories']/ul/li[2]/div[1]/a/img")
-    SUBCATEGORIES_SUMMER_DRESSES_THUMBNAIL = (By.XPATH, "//*[@id='subcategories']/ul/li[3]/div[1]/a/img")
-    DRESSES_SORT_BY_DROPDOWN = (By.ID, "selectProductSort")
-    DRESSES_VIEW_GRID_BUTTON = (By.XPATH, "//*[@id='grid']/a/i")
-    DRESSES_VIEW_LIST_BUTTON = (By.XPATH, "//*[@id='list']/a/i")
-
-    # Printed Chiffon Dress locators
-    PRINTED_CHIFFON_DRESS_THUMBNAIL = (By.XPATH, "//*[@title='Printed Chiffon Dress'][1]")
-    PRINTED_CHIFFON_DRESS_QUICK_VIEW_BUTTON = (By.XPATH, "//span[text()='Quick view']")
-    PRINTED_CHIFFON_DRESS_ADD_TO_CART_BUTTON = (By.XPATH, "//span[text()='Add to cart']")
-    PRINTED_CHIFFON_DRESS_MORE_BUTTON = (By.XPATH, "//span[text()='More']")
-
     def __init__(self, driver):
         self.driver = driver
 
     def click_dresses_nav_menu_button(self):
-        self.driver.find_element(*self.DRESSES_NAV_MENU_BUTTON).click()
+        dresses_nav_menu = \
+            Button(self.driver,
+                   xpath="//*[@id='block_top_menu']/ul/li[2]/a")
+        dresses_nav_menu.click()
 
     def click_dresses_casual_dresses_link(self):
-        self.driver.find_element(*self.DRESSES_CASUAL_DRESSES_LINK).click()
+        dresses_casual_dresses = \
+            Link(self.driver,
+                 xpath="//*[@id='categories_block_left']/div/ul/li[1]/a")
+        dresses_casual_dresses.click()
 
     def click_dresses_evening_dresses_link(self):
-        self.driver.find_element(*self.DRESSES_EVENING_DRESSES_LINK).click()
+        dresses_evening_dresses = \
+            Link(self.driver,
+                 xpath="//*[@id='categories_block_left']/div/ul/li[2]/a")
+        dresses_evening_dresses.click()
 
     def click_dresses_summer_dresses_link(self):
-        self.driver.find_element(*self.DRESSES_SUMMER_DRESSES_LINK).click()
+        dresses_summer_dresses = \
+            Link(self.driver,
+                 xpath="//*[@id='categories_block_left']/div/ul/li[3]/a")
+        dresses_summer_dresses.click()
 
-    def select_categories_casual_dresses_checkbox(self):
-        self.driver.find_element(*self.CATEGORIES_CASUAL_DRESSES_CHECKBOX).click()
+    def check_categories_casual_dresses_checkbox(self):
+        categories_casual_dresses = \
+            CheckBox(self.driver, div_id="layered_category_9")
+        categories_casual_dresses.check()
 
-    def select_categories_evening_dresses_checkbox(self):
-        self.driver.find_element(*self.CATEGORIES_EVENING_DRESSES_CHECKBOX).click()
+    def uncheck_categories_casual_dresses_checkbox(self):
+        uncheck_categories_casual_dresses = \
+            CheckBox(self.driver, div_id="layered_category_9")
+        uncheck_categories_casual_dresses.uncheck()
 
-    def select_categories_summer_dresses_checkbox(self):
-        self.driver.find_element(*self.CATEGORIES_SUMMER_DRESSES_CHECKBOX).click()
+    def check_categories_evening_dresses_checkbox(self):
+        categories_evening_dresses = CheckBox(self.driver,
+                                              div_id="layered_category_10")
+        categories_evening_dresses.check()
 
-    def select_dresses_size_small_checkbox(self):
-        self.driver.find_element(*self.DRESSES_SIZE_SMALL_CHECKBOX).click()
+    def uncheck_categories_evening_dresses_checkbox(self):
+        uncheck_categories_evening_dresses = \
+            CheckBox(self.driver, div_id="layered_category_10")
+        uncheck_categories_evening_dresses.uncheck()
 
-    def select_dresses_size_medium_checkbox(self):
-        self.driver.find_element(*self.DRESSES_SIZE_MEDIUM_CHECKBOX).click()
+    def check_categories_summer_dresses_checkbox(self):
+        categories_summer_dresses = \
+            CheckBox(self.driver, div_id="layered_category_11")
+        categories_summer_dresses.check()
 
-    def select_dresses_size_large_checkbox(self):
-        self.driver.find_element(*self.DRESSES_SIZE_LARGE_CHECKBOX).click()
+    def uncheck_categories_summer_dresses_checkbox(self):
+        uncheck_categories_summer_dresses = \
+            CheckBox(self.driver, div_id="layered_category_11")
+        uncheck_categories_summer_dresses.uncheck()
 
-    def select_dresses_color_beige_checkbox(self):
-        self.driver.find_element(*self.DRESSES_COLOR_BEIGE_CHECKBOX).click()
+    def check_dresses_size_small_checkbox(self):
+        dresses_size_small = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_1")
+        dresses_size_small.check()
 
-    def select_dresses_color_white_checkbox(self):
-        self.driver.find_element(*self.DRESSES_COLOR_WHITE_CHECKBOX).click()
+    def uncheck_dresses_size_small_checkbox(self):
+        uncheck_dresses_size_small = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_1")
+        uncheck_dresses_size_small.uncheck()
 
-    def select_dresses_color_black_checkbox(self):
-        self.driver.find_element(*self.DRESSES_COLOR_BLACK_CHECKBOX).click()
+    def check_dresses_size_medium_checkbox(self):
+        dresses_size_medium = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_2")
+        dresses_size_medium.check()
 
-    def select_dresses_color_orange_checkbox(self):
-        self.driver.find_element(*self.DRESSES_COLOR_ORANGE_CHECKBOX).click()
+    def uncheck_dresses_size_medium_checkbox(self):
+        uncheck_dresses_size_medium = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_2")
+        uncheck_dresses_size_medium.uncheck()
 
-    def select_dresses_color_blue_checkbox(self):
-        self.driver.find_element(*self.DRESSES_COLOR_BLUE_CHECKBOX).click()
+    def check_dresses_size_large_checkbox(self):
+        dresses_size_large = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_3")
+        dresses_size_large.check()
 
-    def select_dresses_color_green_checkbox(self):
-        self.driver.find_element(*self.DRESSES_COLOR_GREEN_CHECKBOX).click()
+    def uncheck_dresses_size_large_checkbox(self):
+        uncheck_dresses_size_large = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_3")
+        uncheck_dresses_size_large.uncheck()
 
-    def select_dresses_color_yellow_checkbox(self):
-        self.driver.find_element(*self.DRESSES_COLOR_YELLOW_CHECKBOX).click()
+    def check_dresses_color_beige_checkbox(self):
+        dresses_color_beige = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_7")
+        dresses_color_beige.check()
 
-    def select_dresses_color_pink_checkbox(self):
-        self.driver.find_element(*self.DRESSES_COLOR_PINK_CHECKBOX).click()
+    def uncheck_dresses_color_beige_checkbox(self):
+        uncheck_dresses_color_beige = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_7")
+        uncheck_dresses_color_beige.uncheck()
 
-    def select_dresses_compositions_cotton_checkbox(self):
-        self.driver.find_element(*self.DRESSES_COMPOSITIONS_COTTON_CHECKBOX).click()
+    def check_dresses_color_white_checkbox(self):
+        dresses_color_white = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_8")
+        dresses_color_white.check()
 
-    def select_dresses_compositions_polyester_checkbox(self):
-        self.driver.find_element(*self.DRESSES_COMPOSITIONS_POLYESTER_CHECKBOX).click()
+    def uncheck_dresses_color_white_checkbox(self):
+        uncheck_dresses_color_white = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_8")
+        uncheck_dresses_color_white.uncheck()
 
-    def select_dresses_compositions_viscose_checkbox(self):
-        self.driver.find_element(*self.DRESSES_COMPOSITIONS_VISCOSE_CHECKBOX).click()
+    def check_dresses_color_black_checkbox(self):
+        dresses_color_black = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_11")
+        dresses_color_black.check()
 
-    def select_dresses_styles_casual_checkbox(self):
-        self.driver.find_element(*self.DRESSES_STYLES_CASUAL_CHECKBOX).click()
+    def uncheck_dresses_color_black_checkbox(self):
+        uncheck_dresses_color_black = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_11")
+        uncheck_dresses_color_black.uncheck()
 
-    def select_dresses_styles_dressy_checkbox(self):
-        self.driver.find_element(*self.DRESSES_STYLES_DRESSY_CHECKBOX).click()
+    def check_dresses_color_orange_checkbox(self):
+        dresses_color_orange = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_13")
+        dresses_color_orange.check()
 
-    def select_dresses_styles_girly_checkbox(self):
-        self.driver.find_element(*self.DRESSES_STYLES_GIRLY_CHECKBOX).click()
+    def uncheck_dresses_color_orange_checkbox(self):
+        uncheck_dresses_color_orange = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_13")
+        uncheck_dresses_color_orange.uncheck()
 
-    def select_dresses_properties_colorful_dress_checkbox(self):
-        self.driver.find_element(*self.DRESSES_PROPERTIES_COLORFUL_DRESS_CHECKBOX).click()
+    def check_dresses_color_blue_checkbox(self):
+        dresses_color_blue = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_14")
+        dresses_color_blue.check()
 
-    def select_dresses_properties_maxi_dress_checkbox(self):
-        self.driver.find_element(*self.DRESSES_PROPERTIES_MAXI_DRESS_CHECKBOX).click()
+    def uncheck_dresses_color_blue_checkbox(self):
+        uncheck_dresses_color_blue = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_14")
+        uncheck_dresses_color_blue.uncheck()
 
-    def select_dresses_properties_midi_dress_checkbox(self):
-        self.driver.find_element(*self.DRESSES_PROPERTIES_MIDI_DRESS_CHECKBOX).click()
+    def check_dresses_color_green_checkbox(self):
+        dresses_color_green = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_15")
+        dresses_color_green.check()
 
-    def select_dresses_properties_short_dress_checkbox(self):
-        self.driver.find_element(*self.DRESSES_PROPERTIES_SHORT_DRESS_CHECKBOX).click()
+    def uncheck_dresses_color_green_checkbox(self):
+        uncheck_dresses_color_green = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_15")
+        uncheck_dresses_color_green.uncheck()
 
-    def select_dresses_availability_in_stock_checkbox(self):
-        self.driver.find_element(*self.DRESSES_AVAILABILITY_IN_STOCK_CHECKBOX).click()
+    def check_dresses_color_yellow_checkbox(self):
+        dresses_color_yellow = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_16")
+        dresses_color_yellow.check()
 
-    def select_dresses_manufacturer_fashion_manufacturer_checkbox(self):
-        self.driver.find_element(*self.DRESSES_MANUFACTURER_FASHION_MANUFACTURER_CHECKBOX).click()
+    def uncheck_dresses_color_yellow_checkbox(self):
+        uncheck_dresses_color_yellow = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_16")
+        uncheck_dresses_color_yellow.uncheck()
 
-    def select_dresses_condition_new_checkbox(self):
-        self.driver.find_element(*self.DRESSES_CONDITION_NEW_CHECKBOX).click()
+    def check_dresses_color_pink_checkbox(self):
+        dresses_color_pink = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_24")
+        dresses_color_pink.check()
+
+    def uncheck_dresses_color_pink_checkbox(self):
+        uncheck_dresses_color_pink = \
+            CheckBox(self.driver, div_id="layered_id_attribute_group_24")
+        uncheck_dresses_color_pink.uncheck()
+
+    def check_dresses_compositions_cotton_checkbox(self):
+        dresses_compositions_cotton = \
+            CheckBox(self.driver, div_id="layered_id_feature_5")
+        dresses_compositions_cotton.check()
+
+    def uncheck_dresses_compositions_cotton_checkbox(self):
+        uncheck_dresses_compositions_cotton = \
+            CheckBox(self.driver, div_id="layered_id_feature_5")
+        uncheck_dresses_compositions_cotton.uncheck()
+
+    def check_dresses_compositions_polyester_checkbox(self):
+        dresses_compositions_polyester = \
+            CheckBox(self.driver, div_id="layered_id_feature_1")
+        dresses_compositions_polyester.check()
+
+    def uncheck_dresses_compositions_polyester_checkbox(self):
+        uncheck_dresses_compositions_polyester = \
+            CheckBox(self.driver, div_id="layered_id_feature_1")
+        uncheck_dresses_compositions_polyester.uncheck()
+
+    def check_dresses_compositions_viscose_checkbox(self):
+        dresses_compositions_viscose = \
+            CheckBox(self.driver, div_id="layered_id_feature_3")
+        dresses_compositions_viscose.check()
+
+    def uncheck_dresses_compositions_viscose_checkbox(self):
+        uncheck_dresses_compositions_viscose = \
+            CheckBox(self.driver, div_id="layered_id_feature_3")
+        uncheck_dresses_compositions_viscose.uncheck()
+
+    def check_dresses_styles_casual_checkbox(self):
+        dresses_styles_casual = \
+            CheckBox(self.driver, div_id="layered_id_feature_11")
+        dresses_styles_casual.check()
+
+    def uncheck_dresses_styles_casual_checkbox(self):
+        uncheck_dresses_styles_casual = \
+            CheckBox(self.driver, div_id="layered_id_feature_11")
+        uncheck_dresses_styles_casual.uncheck()
+
+    def check_dresses_styles_dressy_checkbox(self):
+        dresses_styles_dressy = \
+            CheckBox(self.driver, div_id="layered_id_feature_16")
+        dresses_styles_dressy.check()
+
+    def uncheck_dresses_styles_dressy_checkbox(self):
+        uncheck_dresses_styles_dressy = \
+            CheckBox(self.driver, div_id="layered_id_feature_16")
+        uncheck_dresses_styles_dressy.uncheck()
+
+    def check_dresses_styles_girly_checkbox(self):
+        dresses_styles_girly = \
+            CheckBox(self.driver, div_id="layered_id_feature_13")
+        dresses_styles_girly.check()
+
+    def uncheck_dresses_styles_girly_checkbox(self):
+        uncheck_dresses_styles_girly = \
+            CheckBox(self.driver, div_id="layered_id_feature_13")
+        uncheck_dresses_styles_girly.uncheck()
+
+    def check_dresses_properties_colorful_dress_checkbox(self):
+        dresses_properties_colorful_dress = \
+            CheckBox(self.driver, div_id="layered_id_feature_18")
+        dresses_properties_colorful_dress.check()
+
+    def uncheck_dresses_properties_colorful_dress_checkbox(self):
+        uncheck_dresses_properties_colorful_dress = \
+            CheckBox(self.driver, div_id="layered_id_feature_18")
+        uncheck_dresses_properties_colorful_dress.uncheck()
+
+    def check_dresses_properties_maxi_dress_checkbox(self):
+        dresses_properties_maxi_dress = \
+            CheckBox(self.driver, div_id="layered_id_feature_21")
+        dresses_properties_maxi_dress.check()
+
+    def uncheck_dresses_properties_maxi_dress_checkbox(self):
+        uncheck_dresses_properties_maxi_dress = \
+            CheckBox(self.driver, div_id="layered_id_feature_21")
+        uncheck_dresses_properties_maxi_dress.uncheck()
+
+    def check_dresses_properties_midi_dress_checkbox(self):
+        dresses_properties_midi_dress = \
+            CheckBox(self.driver, div_id="layered_id_feature_20")
+        dresses_properties_midi_dress.check()
+
+    def uncheck_dresses_properties_midi_dress_checkbox(self):
+        uncheck_dresses_properties_midi_dress = \
+            CheckBox(self.driver, div_id="layered_id_feature_20")
+        uncheck_dresses_properties_midi_dress.uncheck()
+
+    def check_dresses_properties_short_dress_checkbox(self):
+        dresses_properties_short_dress = \
+            CheckBox(self.driver, div_id="layered_id_feature_19")
+        dresses_properties_short_dress.check()
+
+    def uncheck_dresses_properties_short_dress_checkbox(self):
+        uncheck_dresses_properties_short_dress = \
+            CheckBox(self.driver, div_id="layered_id_feature_19")
+        uncheck_dresses_properties_short_dress.uncheck()
+
+    def check_dresses_availability_in_stock_checkbox(self):
+        dresses_availability_in_stock = \
+            CheckBox(self.driver, div_id="layered_quantity_1")
+        dresses_availability_in_stock.check()
+
+    def uncheck_dresses_availability_in_stock_checkbox(self):
+        uncheck_dresses_availability_in_stock = \
+            CheckBox(self.driver, div_id="layered_quantity_1")
+        uncheck_dresses_availability_in_stock.uncheck()
+
+    def check_dresses_manufacturer_fashion_manufacturer_checkbox(self):
+        dresses_manufacturer_fashion_manufacturer = \
+            CheckBox(self.driver, div_id="layered_manufacturer_1")
+        dresses_manufacturer_fashion_manufacturer.check()
+
+    def uncheck_dresses_manufacturer_fashion_manufacturer_checkbox(self):
+        uncheck_dresses_manufacturer_fashion_manufacturer = \
+            CheckBox(self.driver, div_id="layered_manufacturer_1")
+        uncheck_dresses_manufacturer_fashion_manufacturer.uncheck()
+
+    def check_dresses_condition_new_checkbox(self):
+        dresses_condition_new = \
+            CheckBox(self.driver, div_id="layered_condition_new")
+        dresses_condition_new.check()
+
+    def uncheck_dresses_condition_new_checkbox(self):
+        uncheck_dresses_condition_new = \
+            CheckBox(self.driver, div_id="layered_condition_new")
+        uncheck_dresses_condition_new.uncheck()
 
     def click_dresses_information_delivery_link(self):
-        self.driver.find_element(*self.DRESSES_INFORMATION_DELIVERY_LINK).click()
+        dresses_information_delivery = \
+            Link(self.driver, xpath="//*[@title='Delivery']")
+        dresses_information_delivery.click()
 
     def click_dresses_information_legal_notice_link(self):
-        self.driver.find_element(*self.DRESSES_INFORMATION_LEGAL_NOTICE_LINK).click()
+        dresses_information_legal_notice = \
+            Link(self.driver, xpath="//*[@title='Legal Notice']")
+        dresses_information_legal_notice.click()
 
     def click_dresses_information_terms_and_conditions_of_use_link(self):
-        self.driver.find_element(*self.DRESSES_INFORMATION_TERMS_AND_CONDITION_OF_USE_LINK).click()
+        dresses_information_terms_and_conditions_of_use = \
+            Link(self.driver,
+                 xpath="//*[@title='Terms and conditions of use']")
+        dresses_information_terms_and_conditions_of_use.click()
 
     def click_dresses_information_about_us_link(self):
-        self.driver.find_element(*self.DRESSES_INFORMATION_ABOUT_US_LINK).click()
+        dresses_information_about_us = \
+            Link(self.driver, xpath="//*[@title='About us']")
+        dresses_information_about_us.click()
 
     def click_dresses_information_secure_payment_link(self):
-        self.driver.find_element(*self.DRESSES_INFORMATION_SECURE_PAYMENT_LINK).click()
+        dresses_information_secure_payment = \
+            Link(self.driver, xpath="//*[@title='Secure payment']")
+        dresses_information_secure_payment.click()
 
     def click_dresses_information_our_stores_link(self):
-        self.driver.find_element(*self.DRESSES_INFORMATION_OUR_STORES_LINK).click()
+        dresses_information_our_stores = \
+            Link(self.driver, xpath="//*[@title='Our stores']")
+        dresses_information_our_stores.click()
 
     def click_dresses_all_specials_button(self):
-        self.driver.find_element(*self.DRESSES_ALL_SPECIALS_BUTTON).click()
+        dresses_all_specials = \
+            Button(self.driver, xpath="//span[text()='All specials']")
+        dresses_all_specials.click()
 
     def click_dresses_discover_our_stores_button(self):
-        self.driver.find_element(*self.DRESSES_DISCOVER_OUR_STORES_BUTTON).click()
+        dresses_discover_our_stores = \
+            Button(self.driver,
+                   xpath="//span[text()='Discover our stores']")
+        dresses_discover_our_stores.click()
 
-    def select_subcategories_casual_dresses_thumbnail(self):
-        self.driver.find_element(*self.SUBCATEGORIES_CASUAL_DRESSES_THUMBNAIL).click()
+    def click_subcategories_casual_dresses_thumbnail(self):
+        subcategories_casual_dresses = \
+            Link(self.driver,
+                 xpath="//*[@id='subcategories']/ul/li[1]/div[1]/a/img")
+        subcategories_casual_dresses.click()
 
-    def select_subcategories_evening_dresses_thumbnail(self):
-        self.driver.find_element(*self.SUBCATEGORIES_EVENING_DRESSES_THUMBNAIL).click()
+    def click_subcategories_evening_dresses_thumbnail(self):
+        subcategories_evening_dresses = \
+            Link(self.driver,
+                 xpath="//*[@id='subcategories']/ul/li[2]/div[1]/a/img")
+        subcategories_evening_dresses.click()
 
-    def select_subcategories_summer_dresses_thumbnail(self):
-        self.driver.find_element(*self.SUBCATEGORIES_SUMMER_DRESSES_THUMBNAIL).click()
+    def click_subcategories_summer_dresses_thumbnail(self):
+        subcategories_summer_dresses = \
+            Link(self.driver,
+                 xpath="//*[@id='subcategories']/ul/li[3]/div[1]/a/img")
+        subcategories_summer_dresses.click()
 
     def select_dresses_sort_by_dropdown(self, value):
-        dropdown = Select(self.driver.find_element(*self.DRESSES_SORT_BY_DROPDOWN))
-        dropdown.select_by_visible_text(value)
+        dresses_sort_by = DropDown(self.driver, div_id="selectProductSort")
+        dresses_sort_by.select_dropdown(value)
 
     def click_dresses_view_grid_button(self):
-        self.driver.find_element(*self.DRESSES_VIEW_GRID_BUTTON).click()
+        dresses_view_grid = Button(self.driver, xpath="//*[@id='grid']/a/i")
+        dresses_view_grid.click()
 
     def click_dresses_list_grid_button(self):
-        self.driver.find_element(*self.DRESSES_VIEW_LIST_BUTTON).click()
+        dresses_list_grid = Button(self.driver, xpath="//*[@id='list']/a/i")
+        dresses_list_grid.click()
 
     def click_printed_chiffon_dress_thumbnail(self):
-        self.driver.find_element(*self.PRINTED_CHIFFON_DRESS_THUMBNAIL).click()
+        printed_chiffon_dress = \
+            Link(self.driver, xpath="//*[@title='Printed Chiffon Dress'][1]")
+        printed_chiffon_dress.click()
 
     def click_printed_chiffon_dress_quick_view_button(self):
-        button = self.driver.find_element(*self.PRINTED_CHIFFON_DRESS_QUICK_VIEW_BUTTON)
-        thumbnail = self.driver.find_element(*self.PRINTED_CHIFFON_DRESS_THUMBNAIL)
-        hover = ActionChains(self.driver).move_to_element(button).move_to_element(thumbnail)
+        button = self.driver. \
+            find_element_by_xpath("//span[text()='Quick view']")
+        thumbnail = self.\
+            driver.\
+            find_element_by_xpath("//*[@title='Printed Chiffon Dress'][1]")
+        hover = ActionChains(self.driver)\
+            .move_to_element(button).move_to_element(thumbnail)
         hover.click().perform()
