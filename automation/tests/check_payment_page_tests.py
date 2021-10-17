@@ -45,7 +45,7 @@ class CheckPaymentPageTests(unittest.TestCase):
         self.address = CheckoutAddressPage(self.driver)
         self.address.click_checkout_address_proceed_to_checkout_button()
         self.shipping = CheckoutShippingPage(self.driver)
-        self.shipping.click_checkout_shipping_terms_of_service_checkbox()
+        self.shipping.check_checkout_shipping_terms_of_service_checkbox()
         self.shipping.click_checkout_shipping_proceed_to_checkout_button()
         self.payment = CheckoutPaymentPage(self.driver)
         self.payment.click_checkout_payment_pay_by_check_button()
